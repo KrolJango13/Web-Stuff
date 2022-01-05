@@ -1,6 +1,5 @@
 function load(){
     // Links
-    applyLink("commentGen",  "./Comment Generator/CommentGen.html")
     applyLink("javadocsLink","./Javadocs/JavaDocsHome.html")
 
     // BitCalc
