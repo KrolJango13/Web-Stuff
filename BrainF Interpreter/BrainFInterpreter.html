@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="../JangoStyle.css">
+        <script src="../GlobalScript.js"></script>
+        <script src ="BFScript.js"></script>
+        <script>
+            function load(){
+                query("button").addEventListener("click",e => {
+                    init()
+                    updateDisplay()
+                    handleBF(byID("code").value)
+                })
+                byID("mult").textContent = "[>[->+>+<<]>[-<+>]<<-]>[-]>>[-<<<+>>>]"
+            }
+        </script>
+        <style>
+            #cells {
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            th {
+                font-size: 50px;
+                height: 100px;
+            }
+            #code {
+                display: block;
+                margin: auto;
+                width: 90%;
+                height: 200px;
+            }
+            button {
+                width: 100px;
+                height: 50px;
+            }
+            .currentcell {
+                color:#0f0;
+            }
+        </style>
+    </head>
+    <body onload="load()">
+        <h1 id="title">Brain---- Interpereter</h1>
+        <table id="cells">
+            <tbody>
+                <tr>
+                    <th id="c1">0</th>
+                    <th id="c2">0</th>
+                    <th id="c3">0</th>
+                    <th id="c4">0</th>
+                    <th id="c5">0</th>
+                    <th id="c6">0</th>
+                    <th id="c7">0</th>
+                    <th id="c8">0</th>
+                    <th id="c9">0</th>
+                    <th id="c10">0</th>
+                    <th id="c11">0</th>
+                    <th id="c12">0</th>
+                    <th id="c13">0</th>
+                    <th id="c14">0</th>
+                    <th id="c15">0</th>
+                    <th id="c16">0</th>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+        <textarea id="code"></textarea>
+        <br>
+        <button></button>
+        <hr>
+        <h3>
+            Multiply: <b><span id="mult"></span></b><br>
+        </h3>
+    </body>
+</html>
