@@ -1,0 +1,46 @@
+body {
+    background-color: #000;
+}
+#title {
+    color: #00f;
+    text-decoration: underline;
+    text-align: center;
+}
+a {
+    color: #00e;
+    margin:10px;
+    font-size:20px;
+}
+a:hover {
+    color: #00ffff;
+}
+#titleContainer {
+    text-align: center;
+    border: 2px solid #00f;
+}
+h3, .text, p, li, h4, h2 {
+    color: #00f;
+}
+tr, td, th {
+    border: 1px solid #00f;
+    text-align: center;
+    color: #00f;
+}
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 20%;
+}
+input, button, select, textarea {
+    color: #fff;
+    background-color: #00f;
+}
+.spacer50 {
+    height:50px;
+}
+hr {
+    border: 2px solid #00f;
+}
+iframe {
+    border: 1px solid #00f;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Jango's HTML Website</title>
+    <link rel="stylesheet" href="JangoStyle.css"/>
+    <script id="global" src="GlobalScript.js"></script>
+    <script src="./IndexScripts/BitCalc.js"></script>
+    <script src="./IndexScripts/Load.js"></script>
+  </head>
+  <body onload = "load()">
+    <div id=titleContainer>
+      <h1 id=title>Jango's HTML Page</h1>
+    </div>
+    <br>
+    <div id=links>
+      <a id="commentGen">Python Comment Generator</a><br><br>
+      <a id="javadocsLink">Javadocs Map</a><br><br>
+    </div>
+    <div class="spacer50"></div>
+    <hr>
+    <div id="bitCalc">
+      <h2>Bitwise Calculator</h2>
+      <select id="selector">
+        <option value="default">--SELECT OPERATION--</option>
+        <option value="NOT">NOT</option>
+        <option value="OR">OR</option>
+        <option value="AND">AND</option>
+        <option value="NOR">NOR</option>
+        <option value="NAND">NAND</option>
+        <option value="XOR">XOR</option>
+        <option value="XNOR">XNOR</option>
+      </select><br><br>
+      <input id=base placeHolder="Enter the base"></input>
+      <input id=otherNum placeHolder="Enter another number"></input>
+      <button id=converter height="25px" width="75px">Calculate</button>
+      <h4 id=result>Answer here</h3>
+    </div>
+    <div class="spacer50"></div>
+    <hr>
+    <div id="hexCoder">
+    <h2>Hexadecimal Converter</h2>
+      <div id=toHexContainer>
+        <h3 id = toHexLabel>To Hexadecimal</h3>
+        <input id=stringIn placeholder="Enter some words">
+        <p id=toHex></p>
+      </div>
+      <div id=toTextContainer>
+        <h3 id = fromHexLabel>From Hexadecimal</h3>
+        <input id = hexIn placeholder = "Enter hex">
+        <p id = fromHex></p>
+      </div>
+    </div>
+    <div class="spacer50"></div>
+    <hr>
+    <h2>Character Codes</h2>
+    <iframe id="chars" src="./Character Codes/CharCodes.html"></iframe>
+    <div class="spacer50"></div>
+  </body>
+</html>
