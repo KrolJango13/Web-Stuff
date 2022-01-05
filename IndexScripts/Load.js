@@ -1,6 +1,7 @@
 function load(){
     // Links
     applyLink("javadocsLink","./Javadocs/JavaDocsHome.html")
+    applyLink("bfLink","./BrainF Interpreter/BrainFInterpreter.html")
 
     // BitCalc
     byID("converter").onclick = () => byID("result").textContent = bitCalc();
