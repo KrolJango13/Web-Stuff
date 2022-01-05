@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Game Page</title>
+        <script src="../GlobalScript.js"></script>
+        <script src="GameScripts.js"></script>
+        <style>
+            body {
+                background-color: #000;
+            }
+            text {
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body onload="load()">
+        <svg width="1000" height="1000" id="gameboard">
+            <rect width="100" height="50" x="0" y="0" fill="#00f" id="eRect">Sus</rect>
+            <text id="ammoDisplay" font-size="20">30</text>
+        </svg>
+    </body>
+</html>
