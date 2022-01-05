@@ -114,3 +114,40 @@ const JSVG = {
         JSVG.launch(obj,xDist * velocity / dist, yDist * -velocity / dist)
     }
 }
+const JXML = {
+    parse: (string) => new DOMParser().parseFromString(string,"text/xml").children[0],
+    byTag: (doc,tagName) => Array.from(doc.getElementsByTagName(tagName)),
+    toJSON(xml){
+        var json = {
+            type: xml.tagName,
+            id: xml.id,
+            innerXML: xml.innerHTML,
+            attributes: {},
+            children: [],
+            classes: []
+        };
+        var cl = xml.classList || [];
+        if(xml.attributes){
+            var attrs = xml.attributes;
+            for(var i = 0; i < attrs.length; i++){
+                json.attributes[attrs[i].name] = attrs[i].value;
+            }
+        }
+        cl.forEach(x => json.classes.push(x));
+        Array.from(xml.children).forEach(x => json.children.push(JXML.toJSON(x)));
+        return json;
+    },
+    makeTag(name,attributes = {},classes = [],innerXML = ""){
+        var tag = `<${name} `;
+        Object.getOwnPropertyNames(attributes ? attributes : {}).forEach(x => tag += `${x}="${attributes[x]}" `);
+        if(classes && classes.length > 0){
+            tag += `class="${classes.join(" ")}"`;
+        }
+        return JXML.fromString(tag + `>${innerXML}</${name}>`).children[0];
+    },
+    simplify(html){
+        var obj = {};
+        html.getAttributeNames().forEach(attr => obj[attr] = html[attr])
+        return obj;
+    }
+}
