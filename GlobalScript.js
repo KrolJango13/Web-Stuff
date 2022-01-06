@@ -3,6 +3,8 @@ const jquery = (() => {
     script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
     return script;
 })();
+let JMath = {}
+import("./JS-Modules/JMath.js").then(module => JMath = module)
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
