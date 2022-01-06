@@ -20,10 +20,10 @@ export function sqrt(num){
 }
 
 // Equivalent to the python range() function
-export const range:(start = 0, end, step = 1) => new Array(Math.ceil((end - start) / step)).fill(start).map((x,i) => x + (step*i))
-export const range0: (end,step = 1) => JMath.range(0,end,step)
+export const range = (start = 0, end, step = 1) => new Array(Math.ceil((end - start) / step)).fill(start).map((x,i) => x + (step*i))
+export const range0 = (end,step = 1) => JMath.range(0,end,step)
 
-export const factorial: (num) => JMath.range(1,num + 1).reduce((x,y) => x*=y)
+export const factorial = (num) => JMath.range(1,num + 1).reduce((x,y) => x*=y)
         
 // Get the factors of a number as an object
 export function factors(num){
@@ -32,10 +32,10 @@ export function factors(num){
     return facs
 }
 
-export const isPrime: (num) => Object.keys(JMath.factors(num)).length == 1
+export const isPrime = (num) => Object.keys(JMath.factors(num)).length == 1
 
 // Get the greatest common factor of a set of numbers
-export const gcf: (...nums) => nums.reduce(function gcd(x,y){return x ? gcd(y % x,x) : y})
+export const gcf = (...nums) => nums.reduce(function gcd(x,y){return x ? gcd(y % x,x) : y})
 
 // Get the least common multiple of a set of numbers
 export const lcm = (...nums) => nums.reduce((x,y) => (x*y) / JMath.gcf(x,y))
