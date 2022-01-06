@@ -1,10 +1,11 @@
-const jquery = (() => {
-    var script = document.createElement("script");
-    script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
-    return script;
+const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
+let JMath = {}, JSVG = {}, JXML = {}
+(async () => {
+    JMath = await getModule("JMath")
+    JSVG = await getModule("JSVG")
+    JXML = await getModule("JXML")
 })();
-let JMath = {}
-import("./JS-Modules/JMath.js").then(module => JMath = module)
+
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
@@ -38,45 +39,7 @@ class JArray extends Array {
     static split = (array, size) => new JArray(...array).split(size)
     static equals = (array, other) => new JArray(...array).equals(other)
 }
-const JXML = {
-    parse: (string) => new DOMParser().parseFromString(string,"text/xml").children[0],
-    byTag: (doc,tagName) => Array.from(doc.getElementsByTagName(tagName)),
-    // Convert an xml (or html) element to json
-    toJSON(xml){
-        var json = {
-            type: xml.tagName,
-            id: xml.id,
-            innerXML: xml.innerHTML,
-            attributes: {},
-            children: [],
-            classes: []
-        };
-        var cl = xml.classList || [];
-        if(xml.attributes){
-            var attrs = xml.attributes;
-            for(var i = 0; i < attrs.length; i++){
-                json.attributes[attrs[i].name] = attrs[i].value;
-            }
-        }
-        cl.forEach(x => json.classes.push(x));
-        Array.from(xml.children).forEach(x => json.children.push(JXML.toJSON(x)));
-        return json;
-    },
-    // Create an xml tag
-    makeTag(name,attributes = {},classes = [],innerXML = ""){
-        var tag = `<${name} `;
-        Object.getOwnPropertyNames(attributes ? attributes : {}).forEach(x => tag += `${x}="${attributes[x]}" `);
-        if(classes && classes.length > 0){
-            tag += `class="${classes.join(" ")}"`;
-        }
-        return JXML.fromString(tag + `>${innerXML}</${name}>`).children[0];
-    },
-    simplify(html){
-        var obj = {};
-        html.getAttributeNames().forEach(attr => obj[attr] = html[attr])
-        return obj;
-    }
-}
+
 // Create a file input and append it to the document
 function genFileIn(){
     var fileIn = document.createElement("input");
