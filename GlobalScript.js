@@ -1,6 +1,6 @@
 const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
 let JMath = {}, JSVG = {}, JXML = {}
-(async () => {
+(async function(){
     JMath = await getModule("JMath")
     JSVG = await getModule("JSVG")
     JXML = await getModule("JXML")
