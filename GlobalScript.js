@@ -1,11 +1,11 @@
 const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
 let JMath = {}, JSVG = {}, JXML = {}
-(async function(){
+async function imports(){
     JMath = await getModule("JMath")
     JSVG = await getModule("JSVG")
     JXML = await getModule("JXML")
-})();
-
+}
+imports()
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
