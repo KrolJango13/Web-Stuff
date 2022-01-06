@@ -16,7 +16,7 @@
         <script id="loader">
             var xhr = new XMLHttpRequest()
             xhr.onload = () => {
-                if(xhr.readyState == 4 && xhr.status == 200)Object.entries(JSON.parse(xhr.response)).map(rowFromArray).forEach(x => query("tbody").innerHTML += x)
+                if(xhr.readyState == 4 && xhr.status == 200)Object.entries(JSON.parse(xhr.response)).map(x => rowFromArray(x)).forEach(x => query("tbody").innerHTML += x)
                 document.body.removeChild(byID("loader"))
             }
             xhr.open("GET","./Chars.json")
