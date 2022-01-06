@@ -57,7 +57,7 @@ const shapes = {
         ].map(arr => [arr[0] + x, arr[1] + y]),color)
     }
 }
-const lineAngle = (line) => JMath.vector(line.x1.baseVal.value, line.y1.baseVal.value, line.x2.baseVal.value, line.y2.baseVal.value),
+const lineAngle = (line) => JMath.vector(line.x1.baseVal.value, line.y1.baseVal.value, line.x2.baseVal.value, line.y2.baseVal.value)
 function launch(obj, velocityX = 0, velocityY = 0){
         obj.setAttribute("velocityX", velocityX)
         obj.setAttribute("velocityY", velocityY)
