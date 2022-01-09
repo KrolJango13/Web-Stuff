@@ -26,6 +26,7 @@ function movePolygon(polygon,x = 0, y = 0){
 }
 
 const rotate = (element,degrees) => element.setAttribute("transform",`rotate(${degrees} ${element.x.baseVal.value} ${element.y.baseVal.value})`)
+const rotatePoly = (element,degrees) => element.setAttribute("transform",`rotate(${degrees} ${centerOf(element).x} ${centerOf(element).y})`)
 
 // Rotate an element to face a certain position
 const pointTo = (element, x, y) => rotate(element,JMath.vector(element.x.baseVal.value,element.y.baseVal.value,x,y))
@@ -67,4 +68,12 @@ function launch2(obj,targetX,targetY,velocity){
     launch(obj,xDist * velocity / dist, yDist * -velocity / dist)
 }
 
-export {createSVG, createPolygon, movePolygon, rotate, pointTo, shapes, lineAngle, launch, launch2}
+function centerOf(poly){
+    var xList = [...poly.points].map(pt => pt.x), yList = [...poly.points].map(pt => pt.y)
+    return {
+        x: (Math.max(...xList) + Math.min(...xList)) / 2,
+        y: (Math.max(...yList) + Math.min(...yList)) / 2
+    }
+}
+
+export {createSVG, createPolygon, movePolygon, rotate, rotatePoly, pointTo, shapes, lineAngle, launch, launch2, centerOf}
