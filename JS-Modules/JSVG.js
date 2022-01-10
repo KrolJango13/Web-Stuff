@@ -76,4 +76,11 @@ function centerOf(poly){
     }
 }
 
-export {createSVG, createPolygon, movePolygon, rotate, rotatePoly, pointTo, shapes, lineAngle, launch, launch2, centerOf}
+function svgPoint(x, y){
+    var pt = createSVG().createSVGPoint()
+    pt.x = x
+    pt.y = y
+    return pt
+}
+
+export {createSVG, createPolygon, movePolygon, rotate, rotatePoly, pointTo, shapes, lineAngle, launch, launch2, centerOf, svgPoint}
