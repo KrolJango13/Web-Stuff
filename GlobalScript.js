@@ -1,9 +1,9 @@
 const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
 let JMath = {}, JSVG = {}, JXML = {}
 async function imports(){
-    JMath = await getModule("JMath")
-    JSVG = await getModule("JSVG")
-    JXML = await getModule("JXML")
+    Object.assign(JMath,getModule("JMath"))
+    Object.assign(JSVG,getModule("JSVG"))
+    Object.assign(JXML,getModule("JXML"))
 }
 imports()
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
