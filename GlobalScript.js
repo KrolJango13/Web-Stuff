@@ -1,11 +1,13 @@
 const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
-let JMath = {}, JSVG = {}, JXML = {}
+let JMath = {}, JSVG = {}, JXML = {}, JArray = {}
 async function imports(){
     Object.assign(JMath, await getModule("JMath"))
     Object.assign(JSVG, await getModule("JSVG"))
     Object.assign(JXML, await getModule("JXML"))
+    Object.assign(JArray, await getModule("JArray"))
 }
 imports()
+
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
@@ -23,22 +25,6 @@ const Logic = {
 
 const query = (selector,element = document) => element.querySelector(selector)
 const queryAll = (selector,element = document) => element.querySelectorAll(selector)
-
-class JArray extends Array {
-    array = () => Array.from(this)
-    // Split an array into chunks of a set size
-    split(size){
-        var arr = []
-        while(this.length % size)this.push(null)
-        JMath.range(size,this.length + size - 1,size).forEach(i => arr.push(this.slice(i - size, i).filter(x => x !== null && x !== undefined).array()))
-        return arr
-    }
-    equals = (other) => this.toString() === other.toString()
-    max = () => this.reduce((x,y) => Math.max(x,y))
-    min = () => this.reduce((x,y) => Math.min(x,y))
-    static split = (array, size) => new JArray(...array).split(size)
-    static equals = (array, other) => new JArray(...array).equals(other)
-}
 
 // Create a file input and append it to the document
 function genFileIn(){
