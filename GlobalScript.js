@@ -47,4 +47,3 @@ const JRandom = {
     // Return a random integer between 0 and the upper bound
     int: (bound = 1000) => Math.floor(Math.random() * bound)
 }
-export {JMath,JSVG,JXML,JArray,byID,rowFromArray,nor,nand,xor,xnor,query,queryAll,getAV,JRandom}
