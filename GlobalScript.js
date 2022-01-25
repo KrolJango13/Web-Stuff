@@ -1,4 +1,4 @@
-const getModule = (moduleName) => import(`./JS-Modules/${moduleName}.js`)
+const getModule = (moduleName) => import(`https://kroljango13.github.io/Web-Stuff/JS-Modules/${moduleName}.js`)
 let JMath = {}, JSVG = {}, JXML = {}, JArray = {}
 async function imports(){
     Object.assign(JMath, await getModule("JMath"))
@@ -18,10 +18,10 @@ function applyLink(id,url){
 const rowFromArray = (...cells) => `<tr><td>${cells.join("</td><td>")}</td></tr>`;
 
 // Boolean logic gates
-const Logic = {
-    xor: (a, b) => (a || b) && !(a && b),
-    xnor: (a, b) => !(a || b) || (a && b)
-}
+const nor = (a,b) => !a && !b
+const nand = (a,b) => !a || !b
+const xor = (a,b) => (a || b) && nand(a,b)
+const xnor = (a,b) => !xor(a,b)
 
 const query = (selector,element = document) => element.querySelector(selector)
 const queryAll = (selector,element = document) => element.querySelectorAll(selector)
@@ -47,3 +47,4 @@ const JRandom = {
     // Return a random integer between 0 and the upper bound
     int: (bound = 1000) => Math.floor(Math.random() * bound)
 }
+export {JMath,JSVG,JXML,JArray,byID,rowFromArray,nor,nand,xor,xnor,query,queryAll,getAV,JRandom}
