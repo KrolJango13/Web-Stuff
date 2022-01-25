@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+            addEventListener("message",e => {
+                console.log(e.data);
+                var p = document.createElement("p");
+                p.textContent = e.data;
+                document.body.append(p);
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
