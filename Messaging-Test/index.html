@@ -2,7 +2,8 @@
 <html>
     <head>
         <script>
-            addEventListener("message",e => {
+            let worker = new SharedWorker("https://kroljango13.github.io/Web-Stuff/Messaging-Test/MessageWorker.js");
+            worker.port.onmessage = e => {
                 console.log(e.data);
                 var p = document.createElement("p");
                 p.textContent = e.data;
