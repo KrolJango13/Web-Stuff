@@ -1,14 +1,6 @@
 let words = [];
 
-oninstall = e => {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET","https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt");
-    xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4 && xhr.status === 200){
-            words = xhr.response.replaceAll("\r","").split("\n");
-        }
-    };
-};
+oninstall = e => fetch("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt").then(x => x.text()).then(x => words = x.replaceAll("\r","").split("\n"));
 
 onmessage = e => {
     var port = e.ports[0];
