@@ -6,7 +6,7 @@ onconnect = e => {
     var port = e.ports[0];
     
     port.addEventListener("message", event => {
-        port.postMessage(event.data in words);
+        port.postMessage(words.includes(event.data));
     });
     
     port.start();
