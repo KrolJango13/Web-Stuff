@@ -8,6 +8,9 @@ async function imports(){
 }
 imports()
 
+// Return a promise that holds the specified ServiceWorker's response
+const getWorkerResponse = (worker) => new Promise((res,rej) => worker.port.addEventListener("message", e => res(e.data)));
+
 const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
