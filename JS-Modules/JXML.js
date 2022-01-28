@@ -28,7 +28,7 @@ const JXML = {
         }
         return json;
     },
-
+    
     // Create an xml tag
     makeTag(name,attributes = {},classes = [],innerXML = ""){
         var tag = `<${name} `;
