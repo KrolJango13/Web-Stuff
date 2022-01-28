@@ -4,7 +4,7 @@ onmessage = e => {
     if(e.data){
         switch(e.data) {
             case "getModules":{
-                e.source.postMessage({JMath:JMath});
+                e.source.postMessage(Object.fromEntries(Object.entries(JMath)));
                 break;
             }
             default:{
