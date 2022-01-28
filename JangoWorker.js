@@ -4,7 +4,7 @@ onmessage = e => {
     if(e.data){
         switch(e.data) {
             case "getModules":{
-                e.source.postMessage(JSON.stringify({JMath,JXML,JSVG,JArray,JRandom}));
+                e.source.postMessage(JSON.stringify({JMath: JMath, JXML: JXML, JSVG: JSVG, JArray: JArray, JRandom: JRandom}));
                 break;
             }
             default:{
