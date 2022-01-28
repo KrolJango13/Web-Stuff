@@ -23,7 +23,9 @@ const JXML = {
             }
         }
         cl.forEach(x => json.classes.push(x));
-        Array.from(xml.children).forEach(x => json.children.push(JXML.toJSON(x)));
+        if(xml.children){
+            Array.from(xml.children).forEach(x => json.children.push(JXML.toJSON(x)));
+        }
         return json;
     },
 
