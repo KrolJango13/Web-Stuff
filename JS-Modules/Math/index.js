@@ -12,7 +12,7 @@ const range0 = (end,step = 1) => range(0,end,step)
 const factorial = (num) => range(1,num + 1).reduce((x,y) => x*=y)
 
 // Get the factors of a number as an object
-const factors = (num) => range(1,num).filter(x => num % x == 0));
+const factors = (num) => range(1,num).filter(x => num % x == 0);
 
 const isPrime = (num) => factors(num).length == 1
 
