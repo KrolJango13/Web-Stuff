@@ -1,3 +1,5 @@
+import * as Geometry from "./Geometry.js"
+
 // Advanced square root that supports imaginary numbers
 const sqrt = (num) => ({
     imaginary: num < 0,
@@ -27,4 +29,4 @@ const pi = {
     str: "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
 }
 
-export {sqrt,range,range0,factorial,factors,isPrime,gcf,lcm,pi}
+export {sqrt,range,range0,factorial,factors,isPrime,gcf,lcm,pi,Geometry}
