@@ -1,5 +1,5 @@
 const int = (xBound) => Math.floor(Math.random() * xBound);
-const rangedInt(min,xMax) => int(xMax - min) + min;
+const rangedInt = (min,xMax) => int(xMax - min) + min;
 const arrayMember = (array) => array[int(array.length)];
 const char = (codeRange = {min:0x41,max:0xff}) => String.fromCodePoint(rangedInt(codeRange.min,codeRange.max + 1));
 const string = (length,codeRange = {min:0x41,max:0xff}) => new Array(length).fill(char(codeRange)).join("");
