@@ -2,7 +2,7 @@ let JMath = {}
 import("https://kroljango13.github.io/Web-Stuff/JS-Modules/Math/index.js").then(module => Object.assign(JMath,module))
 
 // Create an SVG element
-const createSVG = (tag = "svg") => document.createElementNS("http://www.w3.org/2000/svg", tag),
+const createSVG = (tag = "svg") => document.createElementNS("http://www.w3.org/2000/svg", tag)
 
 // Make an SVG polygon from an array of points and a color (if specified)
 function createPolygon(points,color = "#00f"){
