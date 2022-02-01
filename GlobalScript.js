@@ -1,10 +1,11 @@
 const getModule = (moduleName) => import(`https://kroljango13.github.io/Web-Stuff/JS-Modules/${moduleName}.js`)
-let JMath = {}, JSVG = {}, JXML = {}, JArray = {}
+let JMath = {}, JSVG = {}, JXML = {}, JArray = {}, JRandom = {}
 async function imports(){
-    Object.assign(JMath, await getModule("JMath"))
+    Object.assign(JMath, await getModule("Math/index"))
     Object.assign(JSVG, await getModule("JSVG"))
     Object.assign(JXML, await getModule("JXML"))
     Object.assign(JArray, await getModule("JArray"))
+    Object.assign(JRandom, await getModule("JRandom"))
 }
 imports()
 
@@ -45,8 +46,4 @@ function getAV(videoElement,useVideo = true, useAudio = false){
         videoElement.srcObject = v;
         videoElement.play();
     },console.error);
-}
-const JRandom = {
-    // Return a random integer between 0 and the upper bound
-    int: (bound = 1000) => Math.floor(Math.random() * bound)
 }
