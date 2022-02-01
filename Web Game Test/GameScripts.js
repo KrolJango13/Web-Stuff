@@ -1,5 +1,4 @@
-let keys = {}, JSVG = {}, mouse = {x:0,y:0,down:false}, ammo = 30, reloading = false;
-import("https://kroljango13.github.io/Web-Stuff/JS-Modules/JSVG.js").then(jsvg => JSVG = jsvg)
+let keys = {}, mouse = {x:0,y:0,down:false}, ammo = 30, reloading = false;
 const bodyEvent = (type,listener) => document.body.addEventListener(type,listener)
 function load(){
     board = byID("gameboard");
