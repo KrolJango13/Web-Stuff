@@ -28,7 +28,7 @@
                 receiver = new BroadcastChannel(localStorage.clientID);
                 receiver.addEventListener("message",e => {
                     console.log(`${e.data.sender}:\n${e.data.msg}`);
-                    navigator.serviceWorker.getRegistration(msgHandlerURL).then(worker => worker.showNotification("From" + e.data.sender,{body:e.data.msg}))
+                    navigator.serviceWorker.getRegistration(msgHandlerURL).then(worker => worker.showNotification("From " + e.data.sender,{body:e.data.msg}))
                 })
             }
         </script>
