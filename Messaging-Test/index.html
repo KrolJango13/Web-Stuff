@@ -2,7 +2,22 @@
 <html>
     <head>
         <script>
-            let receiver;
+            const msgHandlerURL = "https://kroljango13.github.io/Web-Stuff/JangoWorker.js";
+            let receiver, msgHandler;
+            navigator.serviceWorker.register(msgHandlerURL).then(x => msgHandler = x);
+            navigator.serviceWorker.onmessage = e => {
+                if(e.source.scriptURL === msgHandlerURL){
+                    navigator.serviceWorker.getRegistration(msgHandlerURL).showNotification(`From ${e.data.sender}:\n${e.data.msg}`)
+                }
+            }
+            function sendMessage(recipientID,msg){
+                msgHandler.active.postMessage({
+                    to: recipientID,
+                    msg: msg,
+                    sender: localStorage.displayName||localStorage.clientID,
+                    id: localStorage.clientID
+                })
+            }
             function load(){
                 if(!localStorage.clientID){
                     localStorage.setItem("clientID",btoa([...crypto.getRandomValues(new Uint8Array(32))].map(x => String.fromCodePoint(x)).join("")).replaceAll(/[+/=]/g,""))
@@ -11,7 +26,7 @@
                     location.hash = "#" + localStorage.clientID;
                 }
                 receiver = new BroadcastChannel(localStorage.clientID);
-                receiver.addEventListener("message",e => console.log(e.data))
+                receiver.addEventListener("message",e => console.log(`${e.data.sender}:\n${e.data.msg}`))
             }
         </script>
     </head>
