@@ -1,15 +1,11 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+        <link rel="stylesheet" href="../JangoStyle.css">
         <script>
             const msgHandlerURL = "https://kroljango13.github.io/Web-Stuff/JangoWorker.js";
             let receiver, msgHandler;
             navigator.serviceWorker.register(msgHandlerURL).then(x => msgHandler = x);
-            navigator.serviceWorker.onmessage = e => {
-                if(e.source.scriptURL === msgHandlerURL){
-                    
-                }
-            }
             function sendMessage(recipientID,msg){
                 msgHandler.active.postMessage({
                     to: recipientID,
@@ -28,10 +24,19 @@
                 receiver = new BroadcastChannel(localStorage.clientID);
                 receiver.addEventListener("message",e => {
                     console.log(`${e.data.sender}:\n${e.data.msg}`);
-                    navigator.serviceWorker.getRegistration(msgHandlerURL).then(worker => worker.showNotification("From " + e.data.sender,{body:e.data.msg}))
+                    msgHandler.showNotification("From " + e.data.sender,{body:e.data.msg})
+                })
+                var byID = document.getElementByID;
+                byID("sender").addEventListener("click",e => {
+                    sendMessage(byID("recipient").value || "worker",byID("messageInput").value || "")
                 })
             }
         </script>
     </head>
-    <body onload="load()"></body>
+    <body onload="load()">
+        <h1 id="title">Message sending</h1>
+        <input id="recipient"></input>
+        <textarea id="messageInput"></textarea>
+        <button id="sender"></button>
+    </body>
 </html>
