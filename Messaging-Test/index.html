@@ -7,7 +7,7 @@
             navigator.serviceWorker.register(msgHandlerURL).then(x => msgHandler = x);
             navigator.serviceWorker.onmessage = e => {
                 if(e.source.scriptURL === msgHandlerURL){
-                    navigator.serviceWorker.getRegistration(msgHandlerURL).showNotification(`From ${e.data.sender}:\n${e.data.msg}`)
+                    
                 }
             }
             function sendMessage(recipientID,msg){
@@ -26,7 +26,10 @@
                     location.hash = "#" + localStorage.clientID;
                 }
                 receiver = new BroadcastChannel(localStorage.clientID);
-                receiver.addEventListener("message",e => console.log(`${e.data.sender}:\n${e.data.msg}`))
+                receiver.addEventListener("message",e => {
+                    console.log(`${e.data.sender}:\n${e.data.msg}`);
+                    navigator.serviceWorker.getRegistration(msgHandlerURL).showNotification("From" + e.data.sender,{body:e.data.msg})
+                })
             }
         </script>
     </head>
