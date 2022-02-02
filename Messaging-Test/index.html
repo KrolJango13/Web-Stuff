@@ -27,8 +27,9 @@
                     console.log(`${e.data.sender}:\n${e.data.msg}`);
                     msgHandler.showNotification("From " + e.data.sender,{body:e.data.msg})
                 })
-                document.getElementByID("sender").addEventListener("click",e => {
-                    sendMessage(document.getElementByID("recipient").value || "worker",document.getElementByID("messageInput").value || "")
+                var byID = document.getElementById;
+                byID("sender").addEventListener("click",e => {
+                    sendMessage(byID("recipient").value || "worker",byID("messageInput").value || "")
                 })
             }
         </script>
