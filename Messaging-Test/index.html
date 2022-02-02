@@ -2,14 +2,18 @@
 <html>
     <head>
         <script>
-            let worker = new SharedWorker("https://kroljango13.github.io/Web-Stuff/Messaging-Test/MessageWorker.js");
-            worker.port.onmessage = e => {
-                console.log(e.data);
-                var p = document.createElement("p");
-                p.textContent = e.data;
-                document.body.append(p);
-            };
+            let receiver;
+            function load(){
+                if(!localStorage.clientID){
+                    localStorage.setItem("clientID",btoa([...crypto.getRandomValues(new Uint8Array(32))].map(x => String.fromCodePoint(x)).join("")).replaceAll(/[+/=]/g,""))
+                }
+                if(location.hash != "#" + localStorage.clientID){
+                    location.hash = "#" + localStorage.clientID;
+                }
+                receiver = new BroadcastChannel(localStorage.clientID);
+                receiver.addEventListener("message",e => console.log(e.data))
+            }
         </script>
     </head>
-    <body></body>
+    <body onload="load()"></body>
 </html>
