@@ -1,16 +1,15 @@
-const jangoModule = (name) => `https://kroljango13.github.io/Web-Stuff/JS-Modules/${name}.js`;
-importScripts(jangoModule("JMath"), jangoModule("JXML"), jangoModule("JSVG"), jangoModule("JArray"), jangoModule("JRandom"));
-onmessage = e => {
-    if(e.data){
-        switch(e.data) {
-            case "getModules":{
-                e.source.postMessage(Object.fromEntries(Object.entries(JMath)));
-                break;
-            }
-            default:{
-                e.source.postMessage("send \"getModules\" for imports");
-                break;
-            }    
-        }
+let channels = {}
+onmessage = async(e) => {
+    var clientList = await clients.matchAll();
+    
+    clientList.forEach(c => {
+        var cId = c.url.split("#")[1];
+        channels[cId] = new BroadcastChannel(cId)
+    })
+    
+    if(e.data.to in channels){
+        channels[e.data.to].postMessage(e.data.msg || "");
+    } else {
+        e.source.postMessage("User not found")
     }
 }
