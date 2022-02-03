@@ -27,7 +27,7 @@
                     console.log(`${e.data.sender}:\n${e.data.msg}`);
                     msgHandler.showNotification("From " + e.data.sender,{body:e.data.msg})
                 })
-                var byID = document.getElementById;
+                var byID = (id) => document.getElementById(id);
                 byID("sender").addEventListener("click",e => {
                     sendMessage(byID("recipient").value || "worker",byID("messageInput").value || "")
                 })
