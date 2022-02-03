@@ -1,5 +1,5 @@
 JMath = {}
-
+import("https://kroljango13.github.io/JS-Modules/Math/index.js").then(x => JMath = x)
 function split(array,size){
     var arr = []
     while(array.length % size)array.push(null)
@@ -9,7 +9,7 @@ function split(array,size){
     
 const equals = (a,b) => a.toString() === b.toString()
 const max = (array) => array.sort().pop()
-const min (array) => array.sort()[0]
+const min = (array) => array.sort()[0]
 
 function rotate2d(array){
     var l = array.length
