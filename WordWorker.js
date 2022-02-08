@@ -8,10 +8,11 @@ oninstall = e => {
 }
 
 onmessage = e => {
-    const reply = channel.postMessage;
+    const reply = (msg) => channel.postMessage(msg);
+    var hasMsgObj = e.data.msgObj ? 1 : 0;
     switch(e.data.method){
         case "random":{
-            if(e.data.msgObj.length){
+            if(hasMsgObj && e.data.msgObj.length){
                 reply(self.words.filter(x => x.length === e.data.msgObj.length)[Math.floor(Math.random() * self.words.length)]);
             } else {
                 reply(self.words[Math.floor(Math.random() * self.words.length)]);
@@ -19,7 +20,7 @@ onmessage = e => {
             break;
         }
         case "test":{
-            if(e.data.msgObj.word){
+            if(hasMsgObj && e.data.msgObj.word){
                 reply(self.words.includes(e.data.msgObj.word));
             } else {
                 reply("Specify a word property on msgObj")
