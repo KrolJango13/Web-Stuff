@@ -1,3 +1,4 @@
+let channel = new BroadcastChannel("jangoWordWorker");
 oninstall = e => {
     e.waitUntil(
         fetch("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt")
@@ -7,7 +8,7 @@ oninstall = e => {
 }
 
 onmessage = e => {
-    const reply = e.source.postMessage
+    const reply = channel.postMessage;
     switch(e.data.method){
         case "random":{
             if(e.data.msgObj.length){
