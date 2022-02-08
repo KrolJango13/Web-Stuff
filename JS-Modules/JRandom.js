@@ -4,9 +4,9 @@ const rangedInt = (min,xMax) => int(xMax - min) + min;
 const arrayMember = (array) => array[int(array.length)];
 const char = (codeRange = {min:0x41,max:0xff}) => String.fromCodePoint(rangedInt(codeRange.min,codeRange.max + 1));
 const string = (length,codeRange = {min:0x41,max:0xff}) => new Array(length).fill(char(codeRange)).join("");
-async function word(){
+async function word(length){
     var words = await wordsPromise;
-    return arrayMember(words);
+    return arrayMember(length ? words.filter(x => x.length === length) : words);
 }
 
 export {int,rangedInt,arrayMember,char,string,word}
