@@ -7,5 +7,12 @@ const ops = {
     XOR: (base,x) => base ^ x,
     XNOR: (base,x) => ~base ^ x
 }
-const bitCalc = () => ops[byID("selector").value](parseInt(byID("base").value), parseInt(byID("otherNum") ? byID("otherNum").value : 1) || 
-      "Operators: NOT, OR, AND, NOR, NAND, XOR, XNOR";
+function bitCalc(){
+    var other1 = byID("otherNum") || {value:1}
+    var other = parseInt(other1.value)
+    var op = byID("selector").value;
+    if(op in ops){
+        return ops[op](parseInt(byID("base").value), other);
+    }
+    return `Operators: ${Object.keys(ops).join(", ")}`
+}
