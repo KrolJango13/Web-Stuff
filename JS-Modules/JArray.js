@@ -1,5 +1,8 @@
-JMath = {}
-import("https://kroljango13.github.io/Web-Stuff/JS-Modules/Math/index.js").then(x => JMath = x)
+let JMath = window.JMath || {}
+if(!Object.entries(JMath).length){
+    import("https://kroljango13.github.io/Web-Stuff/JS-Modules/Math/index.js").then(x => JMath = x)
+}
+
 function split(array,size){
     var arr = []
     while(array.length % size)array.push(null)
