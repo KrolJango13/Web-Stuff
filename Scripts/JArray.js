@@ -1,8 +1,3 @@
-/**
-* Here is a link to JQuery to execute this script remotely
-* @link https://code.jquery.com/jquery-3.6.0.js
-*/
-
 let arrProto = Array.prototype;
 
 arrProto.middle = function(){
