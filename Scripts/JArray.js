@@ -16,7 +16,8 @@ arrProto.divide = function(size){
     while(this.length % size){
         this.push(null)
     }
-    for(var i = 0; i < this.length; i++){
+    var l = this.length;
+    for(var i = 0; i < l; i++){
         array.push(this.splice(0,size))
     }
     return array;
