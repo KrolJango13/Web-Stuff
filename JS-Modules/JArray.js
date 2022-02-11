@@ -1,5 +1,5 @@
 JMath = {}
-import("https://kroljango13.github.io/JS-Modules/Math/index.js").then(x => JMath = x)
+import("https://kroljango13.github.io/Web-Stuff/JS-Modules/Math/index.js").then(x => JMath = x)
 function split(array,size){
     var arr = []
     while(array.length % size)array.push(null)
