@@ -1,11 +1,12 @@
 const getModule = (moduleName) => import(`https://kroljango13.github.io/Web-Stuff/JS-Modules/${moduleName}.js`)
-let JMath = {}, JSVG = {}, JXML = {}, JArray = {}, JRandom = {}
+let JMath = {}, JSVG = {}, JXML = {}, JArray = {}, JRandom = {}, FS = {}
 async function imports(){
     Object.assign(JMath, await getModule("Math/index"))
     Object.assign(JSVG, await getModule("JSVG"))
     Object.assign(JXML, await getModule("JXML"))
     Object.assign(JArray, await getModule("JArray"))
     Object.assign(JRandom, await getModule("JRandom"))
+    Object.assign(FS, await getModule("FileSystem"))
 }
 imports()
 
