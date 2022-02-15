@@ -1,0 +1,248 @@
+{
+    "symbols":{
+        "infinity": {
+            "char": "∞",
+            "code": "221e"
+        },
+        "sqrt": {
+            "char": "√",
+            "code": "221a"
+        },
+        "degrees": {
+            "char": "°",
+            "code": "b0"
+        },
+        "plusMinus": {
+            "char": "±",
+            "code": "b1"
+        },
+        "multSign": {
+            "char": "×",
+            "code": "d7"
+        },
+        "divisionSign": {
+            "char": "÷",
+            "code": "f7"
+        },
+        "pi": {
+            "char": "π",
+            "code": "3c0"
+        },
+        "<=": {
+            "char": "≤",
+            "code": "2264"
+        },
+        ">=": {
+            "char": "≥",
+            "code": "2265"
+        },
+        "congruent": {
+            "char": "≅",
+            "code": "2245"
+        }
+    },
+    "fractions": {
+        "one_numerator": {
+            "char": "⅟",
+            "code": "215f"
+        },
+        "half": {
+            "char": "½",
+            "code": "bd"
+        },
+        "third": {
+            "1": {
+                "char": "⅓",
+                "code": "2153"
+            },
+            "2": {
+                "char": "⅔",
+                "code": "2154"
+            }
+        },
+        "fourth": {
+            "1": {
+                "char": "¼",
+                "code": "bc"
+            },
+            "3": {
+                "char": "¾",
+                "code": "be"
+            }
+        },
+        "fifth": {
+            "1": {
+                "char": "⅕",
+                "code": "2155"
+            },
+            "2": {
+                "char": "⅖",
+                "code": "2156"
+            },
+            "3": {
+                "char": "⅗",
+                "code": "2157"
+            },
+            "4": {
+                "char": "⅘",
+                "code": "2158"
+            }
+        },
+        "sixth": {
+            "1": {
+                "char": "⅙",
+                "code": "2159"
+            },
+            "5": {
+                "char": "⅚",
+                "code": "215a"
+            }
+        },
+        "eighth": {
+            "1": {
+                "char": "⅛",
+                "code": "215b"
+            },
+            "3": {
+                "char": "⅜",
+                "code": "215c"
+            },
+            "5": {
+                "char": "⅝",
+                "code": "215d"
+            },
+            "7": {
+                "char": "⅞",
+                "code": "215e"
+            }
+        }
+    },
+    "superscripts": {
+        "0": {
+            "char": "⁰",
+            "code": "2070"
+        },
+        "2": {
+            "char": "²",
+            "code": "b2"
+        },
+        "3": {
+            "char": "³",
+            "code": "b3"
+        },
+        "4": {
+            "char": "⁴",
+            "code": "2074"
+        },
+        "5": {
+            "char": "⁵",
+            "code": "2075"
+        },
+        "6": {
+            "char": "⁶",
+            "code": "2076"
+        },
+        "7": {
+            "char": "⁷",
+            "code": "2077"
+        },
+        "8": {
+            "char": "⁸",
+            "code": "2078"
+        },
+        "9": {
+            "char": "⁹",
+            "code": "2079"
+        },
+        "plus": {
+            "char": "⁺",
+            "code": "207a"
+        },
+        "minus": {
+            "char": "⁻",
+            "code": "207b"
+        },
+        "equals": {
+            "char": "⁼",
+            "code": "207c"
+        },
+        "openParenthesis": {
+            "char": "⁽",
+            "code": "207d"
+        },
+        "closeParenthesis": {
+            "char": "⁾",
+            "code": "207e"
+        },
+        "n": {
+            "char": "ⁿ",
+            "code": "207f"
+        }
+    },
+    "subscripts": {
+        "0": {
+            "char": "₀",
+            "code": "2080"
+        },
+        "1": {
+            "char": "₁",
+            "code": "2081"
+        },
+        "2": {
+            "char": "₂",
+            "code": "2082"
+        },
+        "3": {
+            "char": "₃",
+            "code": "2083"
+        },
+        "4": {
+            "char": "₄",
+            "code": "2084"
+        },
+        "5": {
+            "char": "₅",
+            "code": "2085"
+        },
+        "6": {
+            "char": "₆",
+            "code": "2086"
+        },
+        "7": {
+            "char": "₇",
+            "code": "2087"
+        },
+        "8": {
+            "char": "₈",
+            "code": "2088"
+        },
+        "9": {
+            "char": "₉",
+            "code": "2089"
+        },
+        "plus": {
+            "char": "₊",
+            "code": "208a"
+        },
+        "minus": {
+            "char": "₋",
+            "code": "208b"
+        },
+        "equals": {
+            "char": "₌",
+            "code": "208c"
+        },
+        "openParenthesis": {
+            "char": "₍",
+            "code": "208d"
+        },
+        "closeParenthesis": {
+            "char": "₎",
+            "code": "208e"
+        },
+        "n": {
+            "char": "₏",
+            "code": "208f"
+        }
+    }
+}
