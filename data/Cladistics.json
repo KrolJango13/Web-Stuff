@@ -2,12 +2,21 @@
     "Eukaryota": {
         "Protista": {},
         "Plantae": {
-            "Anthocerotophyta": {},
             "Bryophyta": {},
             "Charophyta": {},
             "Chlorophyta": {},
             "Cycadophyta": {},
-            "Ginkgophyta": {},
+            "Ginkgophyta": {
+                "Ginkgoopsida": {
+                    "Ginkgoales": {
+                        "Ginkgoaceae": {
+                            "Ginkgo": [
+                                "biloba"
+                            ]
+                        }
+                    }
+                }
+            },
             "Glaucophyta": {
                 "Glaucocystophyceae": {
                     "Cyanophorales": {
@@ -120,7 +129,81 @@
                     },
                     "Ephedrales": {
                         "Ephedraceae": {
-                            "Ephedra": []
+                            "Ephedra": [
+                                "alata",
+                                "altissima",
+                                "americana",
+                                "antisyphilitica",
+                                "aphylla",
+                                "arenicola",
+                                "aspera",
+                                "aurantiaca",
+                                "boelckei",
+                                "botschantzevii",
+                                "breana",
+                                "brevifoliata",
+                                "californica",
+                                "chilensis",
+                                "compacta",
+                                "coryi",
+                                "cutleri",
+                                "dahurica",
+                                "dawuensis",
+                                "distachya",
+                                "eleutherolepis",
+                                "equisetina",
+                                "fasciculata",
+                                "fedtschenkoae",
+                                "foeminea",
+                                "foliata",
+                                "fragilis",
+                                "frustillata",
+                                "funerea",
+                                "gerardiana",
+                                "gracilis",
+                                "holoptera",
+                                "intermedia",
+                                "kardangensis",
+                                "khurikensis",
+                                "laristanica",
+                                "likiangensis",
+                                "lomatolepis",
+                                "major",
+                                "milleri",
+                                "minuta",
+                                "monosperma",
+                                "multiflora",
+                                "nevadensis",
+                                "ochreata",
+                                "oxyphylla",
+                                "pachyclada",
+                                "pangiensis",
+                                "pedunculata",
+                                "pentandra",
+                                "procera",
+                                "przewalskii",
+                                "pseudodistachya",
+                                "regeliana",
+                                "rhytidosperma",
+                                "rituensis",
+                                "rupestris",
+                                "sarcocarpa",
+                                "saxatilis",
+                                "sinica",
+                                "somalensis",
+                                "strobilacea",
+                                "sumlingensis",
+                                "tilhoana",
+                                "torreyana",
+                                "transitoria",
+                                "triandra",
+                                "trifurca",
+                                "trifurcata",
+                                "tweedieana",
+                                "viridis",
+                                "vvedenskyi",
+                                "yangthangensis"
+                            ]
                         }
                     }
                 }
