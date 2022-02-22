@@ -1,0 +1,122 @@
+{
+    "Eukaryota": {
+        "Protista": {},
+        "Plantae": {
+            "Anthocerotophyta": {},
+            "Bryophyta": {},
+            "Charophyta": {},
+            "Chlorophyta": {},
+            "Cycadophyta": {},
+            "Ginkgophyta": {},
+            "Glaucophyta": {
+                "Glaucocystophyceae": {
+                    "Cyanophorales": {
+                        "Cyanophoraceae": {
+                            "Cyanophora": [
+                                "tetracyanea",
+                                "biloba",
+                                "sudae",
+                                "paradoxa",
+                                "kugrensii",
+                                "cuspidata"
+                            ],
+                            "Peliaina": [
+                                "cyanea"
+                            ],
+                            "Strobilomonas": [
+                                "cyaneus"
+                            ]
+                        }
+                    },
+                    "Gloeochaetales": {
+                        "Gloeochaetaceae": {
+                            "Cyanoptyche": [
+                                "gloeocystis"
+                            ],
+                            "Gloeochaete": [
+                                "wittrockiana"
+                            ]
+                        }
+                    },
+                    "Glaucocystales": {
+                        "Glaucocystidaceae": {
+                            "Glaucocystopsis": [
+                                "africana"
+                            ],
+                            "Glaucocystis": [
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                ""
+                            ]
+                        }
+                    }
+                }
+            },
+            "Gnetophyta": {},
+            "Lycophyta": {},
+            "Magnoliophyta": {},
+            "Marchantiophyta": {},
+            "Polypodiophyta": {},
+            "Pinophyta": {},
+            "Rhodophyta": {},
+        },
+        "Fungi": {},
+        "Animalia": {
+            "Annelida": {},
+            "Agmata": {},
+            "Archaeocyatha": {},
+            "Arthropoda": {},
+            "Brachiopoda": {},
+            "Bryozoa": {},
+            "Chaetognatha": {},
+            "Chordata": {},
+            "Cnidaria": {},
+            "Ctenophora": {},
+            "Cycliophora": {},
+            "Echinodermata": {},
+            "Entoprocta": {},
+            "Gastrotricha": {},
+            "Gnathostomulida": {},
+            "Hemichordata": {},
+            "Ivesheadiomorpha": {},
+            "Kinorhyncha": {},
+            "Loricifera": {},
+            "Micrognathozoa": {},
+            "Medusoid": {},
+            "Mollusca": {},
+            "Nematoda": {},
+            "Nematomorpha": {},
+            "Nemertea": {},
+            "Onychophora": {},
+            "Petalonamae": {},
+            "Phoronida": {},
+            "Placozoa": {},
+            "Platyhelminthes": {},
+            "Porifera": {},
+            "Priapulida": {},
+            "Proarticulata": {},
+            "Rhombozoa": {},
+            "Rotifera": {},
+            "Saccorhytida": {},
+            "Tardigrada": {},
+            "Trilobozoa": {},
+            "Vetulicolia": {},
+            "Xenacoelomorpha": {}
+        }
+    },
+    "Bacteria": {
+        "Eubacteria": {}
+    },
+    "Archaea": {
+        "Archae": {}
+    }
+}
