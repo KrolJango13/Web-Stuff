@@ -1,0 +1,75 @@
+{
+    "Neocallimastigomycetes": {
+        "Neocallimastigales": {
+            "Neocallimastigaceae": {
+                "Aestipascuomyces": [
+                    "dupliciliberatus"
+                ],
+                "Buwchfawromyces": [
+                    "eastonii"
+                ],
+                "Cyllamyces": [
+                    "aberensis"
+                ],
+                "Feramyces": [
+                    "austinii"
+                ],
+                "Liebetanzomyces": [
+                    "polymorphus"
+                ],
+                "Neocallimastix": [
+                    "californiae",
+                    "cameroonii",
+                    "frontalis",
+                    "hurleyensis",
+                    "joyoni",
+                    "patriciarum",
+                    "variabilis"
+                ],
+                "Oontomyces": [
+                    "anksri"
+                ],
+                "Pecoramyces": [
+                    "ruminantium"
+                ]
+            },
+            "Orpinomycetaceae": {
+                "Orpinomyces": [
+                    "bovis",
+                    "intercalaris"
+                ]
+            },
+            "Sphaeromonadaceae": {
+                "Sphaeromonas": [
+                    "communis",
+                    "equi",
+                    "hurleyensis",
+                    "sympodialis"
+                ]
+            },
+            "Anaeromycetaceae": {
+                "Anaeromyces": [
+                    "elegans",
+                    "mucronatus",
+                    "polycephalus",
+                    "robustus"
+                ]
+            },
+            "Piromonadaceae": {
+                "Piromonas": [
+                    "citronii",
+                    "communis",
+                    "cryptodigmatica",
+                    "dumbonica",
+                    "mae",
+                    "maxima",
+                    "minima",
+                    "minuta",
+                    "polycephala",
+                    "rhizinflata",
+                    "spiralis"
+                ]
+            }
+        }
+    }
+}
