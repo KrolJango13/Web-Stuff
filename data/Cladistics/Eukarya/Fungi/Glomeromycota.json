@@ -1,0 +1,197 @@
+{
+    "Glomeromycetes": {
+        "Archaeosporales": {
+            "Ambisporaceae": {
+                "Ambispora": [
+                    "appendicula",
+                    "callosa",
+                    "fennica",
+                    "gerdemannii",
+                    "granatensis",
+                    "leptoticha"
+                ]
+            },
+            "Archaeosporaceae": {
+                "Archaeospora": [
+                    "gerdemannii",
+                    "leptoticha",
+                    "schenckii",
+                    "trappei"
+                ]
+            },
+            "Geosiphonaceae": {
+                "Geosiphon": [
+                    "pyriformis"
+                ]
+            }
+        },
+        "Diversisporales": {
+            "Acaulosporaceae": {
+                "Acaulospora": [
+				    "alpina",
+				    "appendicula",
+				    "bireticulata",
+				    "brasiliensis",
+				    "capsicula",
+				    "cavernata",
+				    "colliculosa",
+				    "colombiana",
+				    "colossica",
+				    "delicata",
+				    "denticulata",
+				    "dilatata",
+				    "elegans",
+				    "entreriana",
+				    "excavata",
+				    "foveata",
+				    "gedanensis",
+				    "gerdemannii",
+				    "kentinensis",
+				    "koskei",
+				    "lacunosa",
+				    "laevis",
+				    "longula",
+				    "mellea",
+				    "morrowiae",
+				    "myriocarpa",
+				    "nicolsonii",
+				    "nivalis",
+				    "paulinae",
+				    "polonica",
+				    "rehmii",
+				    "rugosa",
+				    "scrobiculata",
+				    "sieverdingii",
+				    "spinosa",
+				    "splendida",
+				    "sporocarpia",
+				    "taiwania",
+				    "terricola",
+				    "thomii",
+				    "trappei",
+				    "tuberculata",
+				    "walkeri"
+                ],
+                "Entrophospora": [
+                    "baltica",
+                    "columbiana",
+                    "infrequens",
+                    "kentinensis",
+                    "schenckii"
+                ]
+            },
+            "Diversisporaceae": {
+                "Diversispora": [
+                    "aurantia",
+                    "celata",
+                    "eburnea",
+                    "epigaea",
+                    "omaniana",
+                    "spurca",
+                    "trimurales"
+                ],
+                "Redeckera": [
+                    "fulva",
+                    "megalocarpa",
+                    "pulvinata"
+                ]
+            },
+            "Gigasporaceae": {
+                "Cetraspora": [
+                    "helvetica"
+                ],
+                "Gigaspora": [
+                    "albida",
+                    "decipiens",
+                    "gigantea",
+                    "margarita",
+                    "rosea"
+                ],
+                "Racocetra": [
+                    "castanea",
+                    "coralloidea",
+                    "fulgida",
+                    "gregaria",
+                    "persica",
+                    "verrucosa",
+                    "weresubiae"
+                ],
+                "Scutellospora": [
+					"biornata",
+					"calospora",
+					"cerradensis",
+					"dipurpurascens",
+					"erythropus",
+					"gilmorei",
+					"heterogama",
+					"nigra",
+					"nodosa",
+					"pellucida",
+					"reticulata",
+					"rubra",
+					"scutata"
+                ]
+            },
+            "Pacisporaceae": {
+                "Pacispora": [
+                    "chimonobambusae",
+                    "patagonica",
+                    "scintillans"
+                ]
+            }
+        },
+        "Glomerales": {
+            "Glomeraceae": {
+                "Funneliformis": [
+                    "caledonius",
+                    "coronatus",
+                    "mosseae"
+                ],
+                "Glomus": [
+                    "cerebriforme",
+                    "macrocarpum"
+                ],
+                "Rhizophagos": [
+                    "clarus",
+                    "intraradices",
+                    "irregularis",
+                    "proliferus"
+                ],
+                "Septoglomus": [
+                    "constrictum"
+                ]
+            },
+            "Claroideoglomeraceae": {
+                "Claroideoglomus": [
+                    "claroideum",
+                    "drummondii",
+                    "etunicatum",
+                    "luteum",
+                    "walkeri"
+                ]
+            }
+        },
+        "Paraglomerales": {
+            "Paraglomeraceae": {
+                "Innospora": [
+                    "majewskii"
+                ],
+                "Paraglomus": [
+                    "albidium",
+                    "bolivianum",
+                    "brasilianum",
+                    "laccatum",
+                    "lacteum",
+                    "occidentale",
+                    "occultum",
+                    "pernambucanum"
+                ]
+            },
+            "Pervetustaceae": {
+                "Pervetustus": [
+                    "simplex"
+                ]
+            }
+        }
+    }
+}
