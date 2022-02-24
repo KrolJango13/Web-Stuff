@@ -10,10 +10,11 @@ async function imports(){
 }
 imports()
 
+const AsyncFunction = (async()=>0).constructor
+
 // Return a promise that holds the specified ServiceWorker's response
 const getWorkerResponse = (worker) => new Promise((res,rej) => worker.port.addEventListener("message", e => res(e.data)));
 
-const getJQuery = ()=>import("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
     byID(id).href = url.replaceAll(" ","%20");
@@ -31,20 +32,5 @@ const xnor = (a,b) => !xor(a,b)
 const query = (selector,element = document) => element.querySelector(selector)
 const queryAll = (selector,element = document) => element.querySelectorAll(selector)
 
-// Create a file input and append it to the document
-function genFileIn(){
-    var fileIn = document.createElement("input");
-    fileIn.type = "file";
-    fileIn.id = "fileIn";
-    document.body.append(fileIn);
-}
-// Get the users webcam, mic, or both and display it in a <video> element
-function getAV(videoElement,useVideo = true, useAudio = false){
-    navigator.getUserMedia({
-        audio: useAudio,
-        video: useVideo
-    },(v) => {
-        videoElement.srcObject = v;
-        videoElement.play();
-    },console.error);
-}
+// Get the users webcam, mic, or both as a promise
+const getAV = (useVideo = true, useAudio = false) => new Promise((res,rej) => navigator.getUserMedia({audio: useAudio,video: useVideo},res,rej));
