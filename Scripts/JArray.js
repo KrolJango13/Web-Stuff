@@ -12,13 +12,17 @@ arrProto.max = function(){return this.sort().pop()}
 arrProto.min = function(){return this.sort()[0]}
     
 arrProto.divide = function(size){
-    var array = [];
-    while(this.length % size){
-        this.push(null)
+    var arr = new Array(Math.ceil(this.length / size)).fill(new Array(size))
+    for(var i = 0; i < arr.length; i++){
+        var arr1 = []
+        for(var j = 0; j < size; j++){
+            arr1.push(this[(i * size) + j])
+        }
+        arr[i] = arr1
     }
-    var l = this.length;
-    for(var i = 0; i < l; i++){
-        array.push(this.splice(0,size))
-    }
-    return array;
+    return arr;
 }
+
+arrProto.randomMember = function(){
+    return this[Math.floor(Math.random() * this.length)];
+};
