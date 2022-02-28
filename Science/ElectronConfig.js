@@ -1,4 +1,4 @@
-window.electronConfig = window.electronConfig || (atomicNum) => {
+window.electronConfig = window.electronConfig || ((atomicNum) => {
   const min = (a,b) => Math.min(Math.max(a,0),Math.max(b,0));
   return {
     "1s": min(2,atomicNum),
@@ -24,4 +24,4 @@ window.electronConfig = window.electronConfig || (atomicNum) => {
       return Object.keys(this).filter(x => this[x] > 0).map(x => `${x}${this[x]}`).join(" ")
     }
   }.toString()
-}
+})
