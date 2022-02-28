@@ -1,4 +1,4 @@
-function electronConfig(atomicNum){
+window.electronConfig = window.electronConfig || (atomicNum) => {
   const min = (a,b) => Math.min(Math.max(a,0),Math.max(b,0));
   return {
     "1s": min(2,atomicNum),
