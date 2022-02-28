@@ -9,11 +9,13 @@ async function imports(){
     Object.assign(FS, await getModule("FileSystem"))
 }
 imports()
+// Shorthand for creating a promise
+const promise = (resolveRejectCallback) => new Promise(resolveRejectCallback); 
 
 const AsyncFunction = (async()=>0).constructor
 
 // Return a promise that holds the specified ServiceWorker's response
-const getWorkerResponse = (worker) => new Promise((res,rej) => worker.port.addEventListener("message", e => res(e.data)));
+const getWorkerResponse = (worker) => promise((res,rej) => worker.port.addEventListener("message", e => res(e.data)));
 
 const byID = (id) => document.getElementById(id)
 function applyLink(id,url){
@@ -33,4 +35,12 @@ const query = (selector,element = document) => element.querySelector(selector)
 const queryAll = (selector,element = document) => element.querySelectorAll(selector)
 
 // Get the users webcam, mic, or both as a promise
-const getAV = (useVideo = true, useAudio = false) => new Promise((res,rej) => navigator.getUserMedia({audio: useAudio,video: useVideo},res,rej));
+const getAV = (useVideo = true, useAudio = false) => promise((res,rej) => navigator.getUserMedia({audio: useAudio,video: useVideo},res,rej));
+
+// Get a file from the user asynchronously
+const getUserFiles = () => promise((res,rej) => {
+    var fileIn = document.createElement("input");
+    fileIn.type = "file";
+    fileIn.oninput = function(e){res(this.files)};
+    fileIn.click();
+});
