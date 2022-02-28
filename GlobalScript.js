@@ -41,6 +41,7 @@ const getAV = (useVideo = true, useAudio = false) => promise((res,rej) => naviga
 const getUserFiles = () => promise((res,rej) => {
     var fileIn = document.createElement("input");
     fileIn.type = "file";
+    fileIn.multiple = true;
     fileIn.oninput = function(e){res(this.files)};
     fileIn.click();
 });
