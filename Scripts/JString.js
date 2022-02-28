@@ -58,4 +58,8 @@
     strProto.isAlphabetic = function(){
         return strCheck.call(this,"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,. ")
     };
+    
+    strProto.padFront = function(targetLength,char = "0"){
+        return char.repeat(this.length - targetLength) + this;
+    }
 })();
