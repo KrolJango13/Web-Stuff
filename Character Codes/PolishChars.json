@@ -1,0 +1,92 @@
+{
+    "a_ogonek": {
+        "upper": {
+            "char": "104",
+            "code": "Ą"
+        },
+        "lower": {
+            "char": "105",
+            "code": "ą"
+        }
+    },
+    "c_accent": {
+        "upper": {
+            "char": "Ć",
+            "code": "106"
+        },
+        "lower": {
+            "char": "ć",
+            "code": "107"
+        }
+    },
+    "e_ogonek": {
+        "upper": {
+            "char": "Ę",
+            "code": "118"
+        },
+        "lower": {
+            "char": "ę",
+            "code": "119"
+        }
+    },
+    "l_stroke": {
+        "upper": {
+            "char": "Ł",
+            "code": "141"
+        },
+        "lower": {
+            "char": "ł",
+            "code": "142"
+        }
+    },
+    "n_accent": {
+        "upper": {
+            "char": "Ń",
+            "code": "143"
+        },
+        "lower": {
+            "char": "ń",
+            "code": "144"
+        }
+    },
+    "o_accent": {
+        "upper": {
+            "char": "Ó",
+            "code": "d3"
+        },
+        "lower": {
+            "char": "ó",
+            "code": "f3"
+        }
+    },
+    "s_accent": {
+        "upper": {
+            "char": "Ś",
+            "code": "15a"
+        },
+        "lower": {
+            "char": "ś",
+            "code": "15b"
+        }
+    },
+    "soft_z": {
+        "upper": {
+            "char": "Ź",
+            "code": "179"
+        },
+        "lower": {
+            "char": "ź",
+            "code": "17a"
+        }
+    },
+    "hard_z": {
+        "upper": {
+            "char": "Ż",
+            "code": "17b"
+        },
+        "lower": {
+            "char": "ż",
+            "code": "17c"
+        }
+    }
+}
