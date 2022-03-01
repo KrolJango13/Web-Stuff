@@ -45,3 +45,15 @@ const getUserFiles = () => promise((res,rej) => {
     fileIn.oninput = function(e){res(this.files)};
     fileIn.click();
 });
+
+function matchBrackets(str){
+  let brackets = {}, stack = [];
+  for(var i = 0; i < str.length; i++){
+    if(str[i] === "["){
+      stack.push(i);
+    } else if(str[i] === "]"){
+      brackets[stack.pop()] = i + 1;
+    }
+  }
+  return Object.entries(brackets).map(x => str.substring(parseInt(x[0]),x[1]));
+}
