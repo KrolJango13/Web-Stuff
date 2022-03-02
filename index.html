@@ -2,11 +2,29 @@
 <html>
   <head>
     <title>Jango's HTML Website</title>
-    <link rel="stylesheet" href="https://kroljango13.github.io/Web-Stuff/JangoStyle.css"/>
-    <link rel="stylesheet" href="https://kroljango13.github.io/DivSpacers/style.css">
-    <script id="global" src="https://kroljango13.github.io/Web-Stuff/GlobalScript.js"></script>
-    <script src="https://kroljango13.github.io/Web-Stuff/IndexScripts/BitCalc.js"></script>
-    <script src="https://kroljango13.github.io/Web-Stuff/IndexScripts/Load.js"></script>
+    <link rel="stylesheet" href="JangoStyle.css">
+    <link rel="stylesheet" href="../DivSpacers/style.css">
+    <script id="global" src="GlobalScript.js"></script>
+    <script src="./IndexScripts/BitCalc.js"></script>
+    <script>
+      function load(){
+        byID("converter").onclick = () => byID("result").textContent = bitCalc();
+        byID("selector").addEventListener("input", e => {
+            if (byID("otherNum") && e.target.value == "NOT"){
+                byID("bitCalc").removeChild(byID("otherNum"));
+            } else if (!byID("otherNum") && e.target.value != "NOT"){
+                byID("base").insertAdjacentHTML("afterend",'<input id=otherNum placeHolder="Enter another number"></input>')
+            }
+        })
+
+        byID("hexIn").addEventListener("input", function(e) {
+            byID('fromHex').textContent = this.value.split(" ").map(x => String.fromCodePoint(parseInt((x.length ? x : "20"),16))).join("");
+        })
+        byID("stringIn").addEventListener("input", function(e) {
+            byID('toHex').textContent = this.value.split("").map(x => x.codePointAt().toString(16));
+        })
+      }
+    </script>
   </head>
   <body onload = "load()">
     <div id=titleContainer>
@@ -14,8 +32,8 @@
     </div>
     <br>
     <div id=links>
-      <a id="javadocsLink">Javadocs Map</a><br><br>
-      <a id="bfLink">BrainF Interpreter</a><br><br>
+      <a id="javadocsLink" href="./Javadocs/" target="_blank">Javadocs Map</a><br><br>
+      <a id="bfLink" href="./BrainF%20Interpreter/" target="_blank">BrainF Interpreter</a><br><br>
     </div>
     <div space="50"></div>
     <hr>
