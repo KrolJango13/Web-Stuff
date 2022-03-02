@@ -25,6 +25,17 @@ function applyLink(id,url){
 // Create HTML table row (<tr>) element from an array
 const rowFromArray = (...cells) => `<tr><td>${cells.join("</td><td>")}</td></tr>`;
 
+// Bitwise operators
+const ops = {
+    NOT: (base) => ~base,
+    OR: (base,x) => base | x,
+    AND: (base,x) => base & x,
+    NOR: (base,x) => ~base & ~x,
+    NAND: (base,x) => ~base | ~x,
+    XOR: (base,x) => base ^ x,
+    XNOR: (base,x) => ~base ^ x
+}
+
 // Boolean logic gates
 const nor = (a,b) => !a && !b
 const nand = (a,b) => !a || !b
