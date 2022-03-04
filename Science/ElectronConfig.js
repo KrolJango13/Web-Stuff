@@ -23,11 +23,11 @@ window.electronConfig = window.electronConfig || ((atomicNum) => {
         toString: function(){
             return Object.keys(this).filter(x => this[x] > 0).map(x => `${x}${this[x]}`).join(" ")
         }
-    }.toString()
+    }
 })
 
 window.nobleGasConfig = window.nobleGasConfig || ((atomicNum) => {
-    const ec = electronConfig;
+    const ec = (x) => electronConfig(x).toString();
     if(atomicNum > 86){
         return ec(atomicNum).replaceAll(ec(86),"[Rn]");
     }
@@ -47,5 +47,4 @@ window.nobleGasConfig = window.nobleGasConfig || ((atomicNum) => {
         return ec(atomicNum).replaceAll(ec(2),"[He]");
     }
     return "1s2";
-    if(atomic)
 })
