@@ -38,7 +38,7 @@ window.nobleGasConfig = window.nobleGasConfig || ((atomicNum) => {
         return ec(atomicNum).replaceAll(ec(36),"[Kr]");
     }
     if(atomicNum > 17){
-        return ec(atomicNum).replaceAll(ec(16),"[Ar]");
+        return ec(atomicNum).replaceAll(ec(18),"[Ar]");
     }
     if(atomicNum > 9){
         return ec(atomicNum).replaceAll(ec(10),"[Ne]");
