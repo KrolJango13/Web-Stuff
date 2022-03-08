@@ -11,7 +11,7 @@ getScript("Time");
 getScript("ElectronConfig","Science");
 getScript("Light","Science");
 
-getScript("Arrow","Ciphers");
+getScript("Arrows","Ciphers");
 getScript("Caesar","Ciphers");
 getScript("Jango","Ciphers");
 getScript("Vigenere","Ciphers");
