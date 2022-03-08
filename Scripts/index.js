@@ -10,3 +10,8 @@ getScript("Time");
 
 getScript("ElectronConfig","Science");
 getScript("Light","Science");
+
+getScript("Arrow","Ciphers");
+getScript("Caesar","Ciphers");
+getScript("Jango","Ciphers");
+getScript("Vigenere","Ciphers");
