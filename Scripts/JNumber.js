@@ -1,5 +1,7 @@
 (async() => {
     var numProto = (1).__proto__
+    const {sqrt,abs,floor} = Math;
+    
     if(![].divide){
         await import("https://kroljango13.github.io/Web-Stuff/Scripts/JArray.js");
     }
@@ -12,7 +14,7 @@
     numProto.sqrt = function(){
         return {
             imaginary: this < 0,
-            value: Math.sqrt(Math.abs(this)),
+            value: sqrt(abs(this)),
             toString: function(){
                 return `${this.value}${this.imaginary ? "i" : ""}`;
             }
@@ -25,7 +27,7 @@
         } else if(this > 0){
             return this > 2 ? (this - 1).factorial() * this : this;
         }
-        return -1 * (Math.abs(this).factorial());
+        return -1 * (abs(this).factorial());
     }
     
     numProto.nor = function(otherNum){
@@ -44,9 +46,10 @@
     
     numProto.factors = function(){
         var facs = {};
-        for(var i = 1; i < this; i++){
+        for(var i = 1; i < abs(this); i++){
             if(!(this % i) && !Object.entries(facs).flat().some(x => parseInt(x) === i)){
                 facs[i] = this / i;
+                facs[-i] = this / -i;
             }
         }
     }
@@ -59,6 +62,20 @@
         return this.factorArray().length > 1;
     }
     
+    numProto.isAntiPrime = function(){
+        var facs = this.factorArray();
+        for(var i = 1; i < abs(this); i++){
+            if(facs.length < i.factorArray().length){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    numProto.isSquare = function(){
+        return this.sqrt().value.isInt();
+    }
+    
     function gcd(a,b){
         return a ? gcd(b % a, a) : b;
     }
@@ -68,5 +85,13 @@
     
     numProto.lcm = function(...others){
         return others.reduce((x,y) => x * y) * this / this.gcf(...others)
+    }
+    
+    numProto.isInt = function(){
+        return floor(this) === this;
+    }
+    
+    numProto.getDecimal = function(){
+        return this - floor(this);
     }
 })();
