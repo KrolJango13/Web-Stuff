@@ -26,3 +26,9 @@ arrProto.divide = function(size){
 arrProto.randomMember = function(){
     return this[Math.floor(Math.random() * this.length)];
 };
+
+arrProto.forEach1 = function(func){
+    for(var x of this){
+        func(x);
+    }
+}
