@@ -7,12 +7,13 @@
         <script id="global" src="GlobalScript.js"></script>
         <script>
             function load(){
+                imports();
+                
                 byID("converter").addEventListener("click", function(e) {
                     var other1 = byID("otherNum") || {value:1};
                     var other = parseInt(other1.value);
                     var op = byID("selector").value;
                     byID("result").textContent = op in bitOps ? bitOps[op](parseInt(byID("base").value), other) : `Operators: ${Object.keys(bitOps).join(", ")}`;
-                    imports();
                 });
                 
                 byID("selector").addEventListener("input", function(e) {
