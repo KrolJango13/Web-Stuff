@@ -3,13 +3,13 @@ const getModule = (moduleName,path = moduleName) => import(`https://kroljango13.
         console.log(`Successfully imported ${moduleName}.js`)
         window[moduleName] = Object.assign({},module);
     })
-    .catch(error => console.error(`Failed to import moduleName because:\n${error}`))
+    .catch(error => console.error(`Failed to import ${moduleName} because:\n${error}`));
+function imports(){
+    getModule("JMath","Math/index");
+    ["JSVG","JXML","JRandom","FileSystem"].forEach(x => getModule(x));
 
-getModule("JMath","Math/index");
-["JSVG","JXML","JRandom","FileSystem"].forEach(x => getModule(x));
-
-import("https://kroljango13.github.io/Web-Stuff/Scripts/index.js");
-
+    import("https://kroljango13.github.io/Web-Stuff/Scripts/index.js");
+}
 // Shorthand for creating a promise
 const promise = (resolveRejectCallback) => new Promise(resolveRejectCallback); 
 
