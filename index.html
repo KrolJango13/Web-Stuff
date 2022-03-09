@@ -1,86 +1,91 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Jango's HTML Website</title>
-    <link rel="stylesheet" href="JangoStyle.css">
-    <link rel="stylesheet" href="../DivSpacers/style.css">
-    <script id="global" src="GlobalScript.js"></script>
-    <script>
-      function load(){
-        byID("converter").onclick = function(e) {
-          var other1 = byID("otherNum") || {value:1};
-          var other = parseInt(other1.value);
-          var op = byID("selector").value;
-          byID("result").textContent = op in bitOps ? bitOps[op](parseInt(byID("base").value), other) : `Operators: ${Object.keys(bitOps).join(", ")}`;
-        }
-        byID("selector").addEventListener("input", e => {
-            if (byID("otherNum") && e.target.value == "NOT"){
-                byID("bitCalc").removeChild(byID("otherNum"));
-            } else if (!byID("otherNum") && e.target.value != "NOT"){
-                byID("base").insertAdjacentHTML("afterend",'<input id=otherNum placeHolder="Enter another number"></input>')
-            }
-        })
+    <head>
+        <title>Jango's HTML Website</title>
+        <link rel="stylesheet" href="JangoStyle.css">
+        <link rel="stylesheet" href="../DivSpacers/style.css">
+        <script id="global" src="GlobalScript.js"></script>
+        <script>
+            function load(){
+                byID("converter").addEventListener("click", function(e) {
+                    var other1 = byID("otherNum") || {value:1};
+                    var other = parseInt(other1.value);
+                    var op = byID("selector").value;
+                    byID("result").textContent = op in bitOps ? bitOps[op](parseInt(byID("base").value), other) : `Operators: ${Object.keys(bitOps).join(", ")}`;
+                    imports();
+                });
+                
+                byID("selector").addEventListener("input", function(e) {
+                    var oN = byID("otherNum");
+                    if (oN && this.value == "NOT"){
+                        byID("bitCalc").removeChild(oN);
+                    } else if (!oN && this.value != "NOT"){
+                        byID("base").insertAdjacentHTML("afterend",'<input id=otherNum placeHolder="Enter another number"></input>')
+                    }
+                });
 
-        byID("hexIn").addEventListener("input", function(e) {
-            byID('fromHex').textContent = this.value.split(" ").map(x => String.fromCodePoint(parseInt((x.length ? x : "20"),16))).join("");
-        })
-        byID("stringIn").addEventListener("input", function(e) {
-            byID('toHex').textContent = this.value.split("").map(x => x.codePointAt().toString(16));
-        })
-      }
-    </script>
-  </head>
-  <body onload = "load()">
-    <div id=titleContainer>
-      <h1 id=title>Jango's HTML Page</h1>
-    </div>
-    <br>
-    <div id=links>
-      <a id="javadocsLink" href="./Javadocs/" target="_blank">Javadocs Map</a><br><br>
-      <a id="bfLink" href="./BrainF%20Interpreter/" target="_blank">BrainF Interpreter</a><br><br>
-    </div>
-    <div space="50"></div>
-    <hr>
-    <div id="bitCalc">
-      <h2>Bitwise Calculator</h2>
-      <select id="selector">
-        <option value="default">--SELECT OPERATION--</option>
-        <option value="NOT">NOT</option>
-        <option value="OR">OR</option>
-        <option value="AND">AND</option>
-        <option value="NOR">NOR</option>
-        <option value="NAND">NAND</option>
-        <option value="XOR">XOR</option>
-        <option value="XNOR">XNOR</option>
-      </select><br><br>
-      <input id=base placeHolder="Enter the base"></input>
-      <input id=otherNum placeHolder="Enter another number"></input>
-      <button id=converter height="25px" width="75px">Calculate</button>
-      <h4 id=result>Answer here</h3>
-    </div>
-    <div space="50"></div>
-    <hr>
-    <div id="hexCoder">
-    <h2>Hexadecimal Converter</h2>
-      <div id=toHexContainer>
-        <h3 id = toHexLabel>To Hexadecimal</h3>
-        <input id=stringIn placeholder="Enter some words">
-        <p id=toHex></p>
-      </div>
-      <div id=toTextContainer>
-        <h3 id = fromHexLabel>From Hexadecimal</h3>
-        <input id = hexIn placeholder = "Enter hex">
-        <p id = fromHex></p>
-      </div>
-    </div>
-    <div space="50"></div>
-    <hr>
-    <h2>Character Codes</h2>
-    <iframe id="chars" src="./Character Codes/"></iframe>
-    <div space="50"></div>
-    <hr>
-    <h2>OneCompiler Compiler</h2>
-    <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/" width="100%"></iframe>
-    <div space="50"></div>
-  </body>
+                byID("hexIn").addEventListener("input", function(e) {
+                    byID('fromHex').textContent = this.value.split(" ").map(x => String.fromCodePoint(parseInt((x.length ? x : "20"),16))).join("");
+                });
+                byID("stringIn").addEventListener("input", function(e) {
+                    byID('toHex').textContent = this.value.split("").map(x => x.codePointAt().toString(16));
+                });
+            }
+        </script>
+    </head>
+    <body onload = "load()">
+        <div id=titleContainer>
+            <h1 id=title>Jango's HTML Page</h1>
+        </div>
+        <br>
+        <div id=links>
+            <a id="javadocsLink" href="./Javadocs/" target="_blank">Javadocs Map</a><br><br>
+            <a id="bfLink" href="./BrainF%20Interpreter/" target="_blank">BrainF Interpreter</a><br><br>
+        </div>
+        <div space="50"></div>
+        <hr>
+        <div id="bitCalc">
+            <h2>Bitwise Calculator</h2>
+            <select id="selector">
+                <option value="default">--SELECT OPERATION--</option>
+                <option value="NOT">NOT</option>
+                <option value="OR">OR</option>
+                <option value="AND">AND</option>
+                <option value="NOR">NOR</option>
+                <option value="NAND">NAND</option>
+                <option value="XOR">XOR</option>
+                <option value="XNOR">XNOR</option>
+            </select>
+            <br>
+            <br>
+            <input id=base placeHolder="Enter the base"></input>
+            <input id=otherNum placeHolder="Enter another number"></input>
+            <button id=converter height="25px" width="75px">Calculate</button>
+            <h4 id=result>Answer here</h3>
+        </div>
+        <div space="50"></div>
+        <hr>
+        <div id="hexCoder">
+            <h2>Hexadecimal Converter</h2>
+            <div id=toHexContainer>
+                <h3 id = toHexLabel>To Hexadecimal</h3>
+                <input id=stringIn placeholder="Enter some words">
+                <p id=toHex></p>
+            </div>
+            <div id=toTextContainer>
+                <h3 id = fromHexLabel>From Hexadecimal</h3>
+                <input id = hexIn placeholder = "Enter hex">
+                <p id = fromHex></p>
+            </div>
+        </div>
+        <div space="50"></div>
+        <hr>
+        <h2>Character Codes</h2>
+        <iframe id="chars" src="./Character Codes/"></iframe>
+        <div space="50"></div>
+        <hr>
+        <h2>OneCompiler Compiler</h2>
+        <iframe frameBorder="0" height="450px" src="https://onecompiler.com/embed/" width="100%"></iframe>
+        <div space="50"></div>
+    </body>
 </html>
