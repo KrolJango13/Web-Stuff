@@ -1,14 +1,15 @@
-const getModule = (moduleName) => import(`https://kroljango13.github.io/Web-Stuff/JS-Modules/${moduleName}.js`)
-let JMath = {}, JSVG = {}, JXML = {}, JArray = {}, JRandom = {}, FS = {}
-async function imports(){
-    Object.assign(JMath, await getModule("Math/index"))
-    Object.assign(JSVG, await getModule("JSVG"))
-    Object.assign(JXML, await getModule("JXML"))
-    Object.assign(JArray, await getModule("JArray"))
-    Object.assign(JRandom, await getModule("JRandom"))
-    Object.assign(FS, await getModule("FileSystem"))
-}
-imports()
+const getModule = (moduleName,path = moduleName) => import(`https://kroljango13.github.io/Web-Stuff/JS-Modules/${path}.js`)
+    .then(module => {
+        console.log(`Successfully imported ${moduleName}.js`)
+        window[moduleName] = Object.assign({},module);
+    })
+    .catch(error => console.error(`Failed to import moduleName because:\n${error}`))
+
+getModule("Math/index","JMath");
+["JSVG","JXML","JRandom","FileSystem"].forEach(x => getModule(x));
+
+import("https://kroljango13.github.io/Web-Stuff/Scripts/index.js");
+
 // Shorthand for creating a promise
 const promise = (resolveRejectCallback) => new Promise(resolveRejectCallback); 
 
@@ -24,6 +25,8 @@ function applyLink(id,url){
 }
 // Create HTML table row (<tr>) element from an array
 const rowFromArray = (...cells) => `<tr><td>${cells.join("</td><td>")}</td></tr>`;
+
+Boolean.prototype.bit = function(){return this.valueOf() ? 1 : 0}
 
 // Bitwise operators
 const ops = {
@@ -67,4 +70,15 @@ function matchBrackets(str){
     }
   }
   return Object.entries(brackets).map(x => str.substring(parseInt(x[0]),x[1]));
+}
+
+function createTxtFile(text,name = Math.floor(Math.random() * 2147483647).toString(16)) {
+    var txtFile = new Blob([text],{type:"text/plain"});
+    var objURL = URL.createObjectURL(txtFile);
+    var a = document.createElement("a");
+    a.href = objURL;
+    a.download = name + ".txt";
+    a.click();
+    URL.revokeObjectURL(objURL);
+    return txtFile;
 }
