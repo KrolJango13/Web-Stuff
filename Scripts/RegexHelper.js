@@ -32,7 +32,7 @@ function comment1LIndexes(str){
         }
         prev = str[i]
     }
-    return 
+    return indexes;
 }
 
 
@@ -50,5 +50,5 @@ function commentMultiLIndexes(str){
         }
         prev = str[i]
     }
-    return 
+    return indexes;
 }
