@@ -5,7 +5,7 @@ const getModule = (moduleName,path = moduleName) => import(`https://kroljango13.
     })
     .catch(error => console.error(`Failed to import moduleName because:\n${error}`))
 
-getModule("Math/index","JMath");
+getModule("JMath","Math/index");
 ["JSVG","JXML","JRandom","FileSystem"].forEach(x => getModule(x));
 
 import("https://kroljango13.github.io/Web-Stuff/Scripts/index.js");
@@ -19,10 +19,7 @@ const AsyncFunction = (async()=>0).constructor
 const getWorkerResponse = (worker) => promise((res,rej) => worker.port.addEventListener("message", e => res(e.data)));
 
 const byID = (id) => document.getElementById(id)
-function applyLink(id,url){
-    byID(id).href = url.replaceAll(" ","%20");
-    byID(id).target = "_blank";
-}
+
 // Create HTML table row (<tr>) element from an array
 const rowFromArray = (...cells) => `<tr><td>${cells.join("</td><td>")}</td></tr>`;
 
