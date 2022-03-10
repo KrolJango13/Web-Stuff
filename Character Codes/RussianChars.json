@@ -1,0 +1,332 @@
+{
+    "a": {
+        "upper": {
+            "char": "А",
+            "code": "410"
+        },
+        "lower": {
+            "char": "а",
+            "code": "430"
+        }
+    },
+    "b": {
+        "upper": {
+            "char": "Б",
+            "code": "411"
+        },
+        "lower": {
+            "char": "б",
+            "code": "431"
+        }
+    },
+    "we": {
+        "upper": {
+            "char": "В",
+            "code": "412"
+        },
+        "lower": {
+            "char": "в",
+            "code": "432"
+        }
+    },
+    "g": {
+        "upper": {
+            "char": "Г",
+            "code": "413"
+        },
+        "lower": {
+            "char": "г",
+            "code": "433"
+        }
+    },
+    "d": {
+        "upper": {
+            "char": "Д",
+            "code": "414"
+        },
+        "lower": {
+            "char": "д",
+            "code": "434"
+        }
+    },
+    "je": {
+        "upper": {
+            "char": "Е",
+            "code": "415"
+        },
+        "lower": {
+            "char": "е",
+            "code": "435"
+        }
+    },
+    "jo": {
+        "upper": {
+            "char": "Ё",
+            "code": "401"
+        },
+        "lower": {
+            "char": "ё",
+            "code": "451"
+        }
+    },
+    "zie": {
+        "upper": {
+            "char": "Ж",
+            "code": "416"
+        },
+        "lower": {
+            "char": "ж",
+            "code": "436"
+        }
+    },
+    "z": {
+        "upper": {
+            "char": "З",
+            "code": "417"
+        },
+        "lower": {
+            "char": "з",
+            "code": "437"
+        }
+    },
+    "y": {
+        "upper": {
+            "char": "И",
+            "code": "418"
+        },
+        "lower": {
+            "char": "и",
+            "code": "438"
+        }
+    },
+    "y_kratoje": {
+        "upper": {
+            "char": "Й",
+            "code": "419"
+        },
+        "lower": {
+            "char": "й",
+            "code": "439"
+        }
+    },
+    "k": {
+        "upper": {
+            "char": "К",
+            "code": "41a"
+        },
+        "lower": {
+            "char": "к",
+            "code": "43a"
+        }
+    },
+    "l": {
+        "upper": {
+            "char": "Л",
+            "code": "41b"
+        },
+        "lower": {
+            "char": "л",
+            "code": "43b"
+        }
+    },
+    "m": {
+        "upper": {
+            "char": "М",
+            "code": "41c"
+        },
+        "lower": {
+            "char": "м",
+            "code": "43c"
+        }
+    },
+    "n": {
+        "upper": {
+            "char": "Н",
+            "code": "41d"
+        },
+        "lower": {
+            "char": "н",
+            "code": "43d"
+        }
+    },
+    "o": {
+        "upper": {
+            "char": "О",
+            "code": "41e"
+        },
+        "lower": {
+            "char": "о",
+            "code": "43e"
+        }
+    },
+    "p": {
+        "upper": {
+            "char": "П",
+            "code": "41f"
+        },
+        "lower": {
+            "char": "п",
+            "code": "43f"
+        }
+    },
+    "r": {
+        "upper": {
+            "char": "Р",
+            "code": "420"
+        },
+        "lower": {
+            "char": "р",
+            "code": "440"
+        }
+    },
+    "s": {
+        "upper": {
+            "char": "С",
+            "code": "421"
+        },
+        "lower": {
+            "char": "с",
+            "code": "441"
+        }
+    },
+    "t": {
+        "upper": {
+            "char": "Т",
+            "code": "422"
+        },
+        "lower": {
+            "char": "т",
+            "code": "442"
+        }
+    },
+    "u": {
+        "upper": {
+            "char": "У",
+            "code": "423"
+        },
+        "lower": {
+            "char": "у",
+            "code": "443"
+        }
+    },
+    "f": {
+        "upper": {
+            "char": "Ф",
+            "code": "424"
+        },
+        "lower": {
+            "char": "ф",
+            "code": "444"
+        }
+    },
+    "cha": {
+        "upper": {
+            "char": "Х",
+            "code": "425"
+        },
+        "lower": {
+            "char": "х",
+            "code": "445"
+        }
+    },
+    "ce": {
+        "upper": {
+            "char": "Ц",
+            "code": "426"
+        },
+        "lower": {
+            "char": "ц",
+            "code": "446"
+        }
+    },
+    "cze": {
+        "upper": {
+            "char": "Ч",
+            "code": "427"
+        },
+        "lower": {
+            "char": "ч",
+            "code": "447"
+        }
+    },
+    "sia": {
+        "upper": {
+            "char": "Ш",
+            "code": "428"
+        },
+        "lower": {
+            "char": "ш",
+            "code": "448"
+        }
+    },
+    "sza": {
+        "upper": {
+            "char": "Щ",
+            "code": "429"
+        },
+        "lower": {
+            "char": "щ",
+            "code": "449"
+        }
+    },
+    "hard_sign": {
+        "upper": {
+            "char": "Ъ",
+            "code": "42a"
+        },
+        "lower": {
+            "char": "ъ",
+            "code": "44a"
+        }
+    },
+    "i": {
+        "upper": {
+            "char": "Ы",
+            "code": "42b"
+        },
+        "lower": {
+            "char": "ы",
+            "code": "44b"
+        }
+    },
+    "soft_sign": {
+        "upper": {
+            "char": "Ь",
+            "code": "42c"
+        },
+        "lower": {
+            "char": "ь",
+            "code": "44c"
+        }
+    },
+    "e": {
+        "upper": {
+            "char": "Э",
+            "code": "42d"
+        },
+        "lower": {
+            "char": "э",
+            "code": "44d"
+        }
+    },
+    "ju": {
+        "upper": {
+            "char": "Ю",
+            "code": "42e"
+        },
+        "lower": {
+            "char": "ю",
+            "code": "44e"
+        }
+    },
+    "ja": {
+        "upper": {
+            "char": "Я",
+            "code": "42f"
+        },
+        "lower": {
+            "char": "я",
+            "code": "44f"
+        }
+    },
+}
