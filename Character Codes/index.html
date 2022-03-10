@@ -2,13 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="../JangoStyle.css">
-        <script src="../GlobalScript.js"></script>
+        <script src="importer.js"></script>
         <script defer>
-            fetch("./Chars.json").then(res => res.json()).then(chars => {
-                for(var row of Object.entries(chars).map(x => `<tr><td>${x.join("</td><td>")}</td></tr>`)){
-                    document.querySelector("tbody").innerHTML += row;
-                }
-            })
+            for(var char of Object.entries(JangosChars)){
+                document.querySelector("tbody").innerHTML += `<tr><td>${char[0]}</td><td>${char[1]}</td></tr>`
+            }
         </script>
     </head>
     <body>
