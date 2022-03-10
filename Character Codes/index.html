@@ -4,16 +4,9 @@
         <link rel="stylesheet" href="../JangoStyle.css">
         <script src="importer.js"></script>
         <script defer>
-            function load(){
-                if(!JangosChars){
-                    setTimeout(load,0);
-                } else {
-                    for(var char of Object.entries(JangosChars)){
-                        document.querySelector("tbody").innerHTML += `<tr><td>${char[0]}</td><td>${char[1]}</td></tr>`
-                    }
-                }
+            for(var char of JangosChars){
+                document.querySelector("tbody").innerHTML += `<tr><td>${char[0]}</td><td>${char[1]}</td></tr>`
             }
-            load();
         </script>
     </head>
     <body>
