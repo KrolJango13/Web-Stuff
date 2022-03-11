@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../JangoStyle.css">
-        <script src="importer.js"></script>
+        <link rel="preload" href="importer.js" as="script">
         <script defer>
             for(var char of JangosChars){
                 document.querySelector("tbody").innerHTML += `<tr><td>${char[0]}</td><td>${char[1]}</td></tr>`
