@@ -1,12 +1,12 @@
 {
     "a_ogonek": {
         "upper": {
-            "char": "104",
-            "code": "Ą"
+            "char": "Ą",
+            "code": "104"
         },
         "lower": {
-            "char": "105",
-            "code": "ą"
+            "char": "ą",
+            "code": "105"
         }
     },
     "c_accent": {
