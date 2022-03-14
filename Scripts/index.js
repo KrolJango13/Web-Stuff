@@ -7,6 +7,8 @@ getScript("JString");
 getScript("JObjects");
 getScript("JNumber");
 getScript("Time");
+getScript("RegexHelper");
+getScript("GoogleHelper");
 
 getScript("ElectronConfig","Science");
 getScript("Light","Science");
