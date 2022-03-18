@@ -51,7 +51,7 @@ window.nobleGasConfig = window.nobleGasConfig || ((atomicNum) => {
 
 window.bohrModel = window.bohrModel || ((atomicNum) => {
     var shells = [0,0,0,0,0,0,0];
-    for(var subLvl of electronConfig(atomicNum).toString().matchAll(/(?<shellIndex>\d)(?<subLvl>\w)(?<count>\d*)/g))){
+    for(var subLvl of electronConfig(atomicNum).toString().matchAll(/(?<shellIndex>\d)(?<subLvl>\w)(?<count>\d*)/g)){
         var {shellIndex,count} = subLvl.groups;
         shells[parseInt(shellIndex) - 1] += parseInt(count);
     }
