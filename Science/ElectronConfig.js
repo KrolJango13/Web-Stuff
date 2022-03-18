@@ -46,5 +46,14 @@ window.nobleGasConfig = window.nobleGasConfig || ((atomicNum) => {
     if(atomicNum > 1){
         return ec(atomicNum).replaceAll(ec(2),"[He]");
     }
-    return "1s2";
+    return "1s1";
 })
+
+window.bohrModel = window.bohrModel || ((atomicNum) => {
+    var shells = [0,0,0,0,0,0,0];
+    for(var subLvl of electronConfig(atomicNum).toString().matchAll(/(?<shellIndex>\d)(?<subLvl>\w)(?<count>\d*)/g))){
+        var {shellIndex,count} = subLvl.groups;
+        shells[parseInt(shellIndex) - 1] += parseInt(count);
+    }
+    return shells;
+});
