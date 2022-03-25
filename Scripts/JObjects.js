@@ -1,12 +1,12 @@
 const objProto = ({}).__proto__;
 
-objProto.keys = function(){
+objProto.keysSelf = function(){
     return Object.keys(this);
 }
-objProto.values = function(){
+objProto.valuesSelf = function(){
     return Object.values(this);
 }
-objProto.entries = function(){
+objProto.entriesSelf = function(){
     return Object.entries(this);
 }
 
