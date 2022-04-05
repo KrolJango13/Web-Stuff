@@ -10,13 +10,11 @@ objProto.entriesSelf = function(){
     return Object.entries(this);
 }
 
-objProto.entriesRecursive = function(){
-    return this.entries().map(x => {
-        if(x.__proto__ === objProto){
-            return x.entriesRecursive();
-        }
+Object.entriesRecursive = function(obj){
+    return this.entries(obj).map(x => x.map(y => {
+        if(x.__proto__ === objProto)return Object.entriesRecursive(x);
         return x;
-    });
+    }));
 }
 
 objProto.fromPath = function(path){
