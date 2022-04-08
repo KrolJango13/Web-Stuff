@@ -46,7 +46,7 @@ function getCoefsSynthesis(a,b,product,maxCoef = 20){
 
 function getCoefsDecomp(reactant,c,d,maxCoef = 20){
     var synth = getCoefsSynthesis(c,d,reactant,maxCoef);
-    synth.unshift(synth.pop);
+    synth.unshift(synth.pop());
     return synth;
 }
 
