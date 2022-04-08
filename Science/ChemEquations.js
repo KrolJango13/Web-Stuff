@@ -1,25 +1,51 @@
-function getCoefs(a,b,c,d,maxCoef = 20){
-    var elements = [], molecs = [a,b,c,d],coefs = [1,1,1,1];
-    for(var molec of molecs) {
+function getElems(...molecules){
+    var elems = [];
+    for(var molec of molecules){
         for(var elem of Object.keys(molec)){
-            if(!elements.includes(elem.toLowerCase())){
-                elements.push(elem.toLowerCase());
+            if(!elems.includes(elem.toLowerCase())){
+                elems.push(elem.toLowerCase());
             }
         }
     }
-    for(var i = 0; i < maxCoef; i++){
-        for(var j = 0; j < maxCoef; j++){
-            for(var k = 0; k < maxCoef; k++){
-                for(var l = 0; l < maxCoef; l++){                
-                    if(elements.every((elem) => {
-                        var a1 = (a[elem] || 0) * (i + 1);
-                        var b1 = (b[elem] || 0) * (j + 1);
-                        var c1 = (c[elem] || 0) * (k + 1);
-                        var d1 = (d[elem] || 0) * (l + 1);
-                        return a1 + b1 == c1 + d1;
-                    }))return [i + 1, j + 1, k + 1, l + 1];
+    return elems;
+}
+
+function EGetter(elem){
+    return (x,y) => (x[elem] || 0) * y;
+}
+
+function getCoefs(a,b,c,d,maxCoef = 20){
+    var elems = getElems(a,b,c,d);
+    for(var i = 1; i < maxCoef + 1; i++){
+        for(var j = 1; j < maxCoef + 1; j++){
+            for(var k = 1; k < maxCoef + 1; k++){
+                for(var l = 1; l < maxCoef + 1; l++){                
+                    if(elems.every((elem) => {
+                        const e = EGetter(elem);
+                        return e(a,i) + e(b,j) == e(c,k) + e(d,l);
+                    }))return [i, j, k, l];
                 }
             }
         }
     }
 }
+
+function getCoefsSynthesis(a,b,product,maxCoef = 20){
+    var elems = getElems(a,b,product);
+    for(var i = 1; i < maxCoef + 1; i++){
+        for(var j = 1; j < maxCoef + 1; j++){
+            for(var k = 1; k < maxCoef + 1; k++){
+                if(elems.every((elem) => {
+                    const e = EGetter(elem);
+                    return e(a,i) + e(b,j) == e(product,k);
+                }))return [i, j, k];
+            }
+        }
+    }
+}
+
+function getCoefsDecomp(reactant,c,d,maxCoef = 20){
+    return getCoefsSynthesis(c,d,reactant,maxCoef);
+}
+
+window.ChemBalancer = {getCoefs,getCoefsSynthesis,getCoefsDecomp}
