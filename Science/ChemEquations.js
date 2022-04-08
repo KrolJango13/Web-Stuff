@@ -45,7 +45,9 @@ function getCoefsSynthesis(a,b,product,maxCoef = 20){
 }
 
 function getCoefsDecomp(reactant,c,d,maxCoef = 20){
-    return getCoefsSynthesis(c,d,reactant,maxCoef);
+    var synth = getCoefsSynthesis(c,d,reactant,maxCoef);
+    synth.unshift(synth.pop);
+    return synth;
 }
 
-window.ChemBalancer = {getCoefs,getCoefsSynthesis,getCoefsDecomp}
+window.ChemBalancer = {getCoefs,getCoefsSynthesis,getCoefsDecomp};
