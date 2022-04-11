@@ -1,5 +1,4 @@
 (async function(){
-    var wordsTxt = await fetch("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt").then(x => x.text());
     var strProto = String.prototype;
     function strCheck(chars){
         for(var char of this){
@@ -24,15 +23,12 @@
         return this[index] === this[index].toLowerCase()
     }
     
-    strProto.lines = function(){
-        return this.split("\n")
-    }
-    strProto.ENGLISH_WORDS = wordsTxt.replaceAll("\r","").lines()
-    strProto.isWord = function(){
-        return this.ENGLISH_WORDS.includes(this)
-    }
-    strProto.words = function(){
-        return this.replaceAll("\n"," ").split(" ")
+    strProto.stripChars = function(...chars) {
+        var str = this;
+        for(var char of chars){
+            str = str.replaceAll(char,"");
+        }
+        return str;
     }
     
     strProto.isNumeric = function(){
@@ -87,10 +83,7 @@
     };
     
     strProto.shiftAlphabet = function(upperShift){
-        if(this.isUpperCase()){
-            return this.shiftCodePoint(upperShift);
-        }
-        return this.shiftCodePoint(upperShift - 32);
+        return this.shiftCodePoint(upperShift - (this.isUpperCase() ? 0 : 32));
     }
     
     strProto.toRegionChar = function(){
@@ -98,14 +91,11 @@
     }
     
     strProto.circleLetters = function(){
-        if(this.isUpperCase()){
-            return this.shiftCodePoint(0x2475);
-        }
-        return this.shiftCodePoint(0x246f);
+        return this.shiftCodePoint(this.isUpperCase() ? 0x2475 : 0x246f);
     };
     
     strProto.unicodeAt = function(index = 0){
-        return this.codePointAt(index);
+        return this.codePointAt(index).toString(16);
     };
     
     strProto.getBytes = function(){
@@ -118,4 +108,12 @@
         }
         return bytes;
     };
+    
+    strProto.mapChars = function(charMap){
+        var str = this;
+        for(var entry of Object.entries(charMap)){
+            str = str.replaceAll.call(str,...entry);
+        }
+        return str;
+    }
 })();
