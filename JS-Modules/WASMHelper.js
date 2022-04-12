@@ -10,7 +10,7 @@ async function compileToWASMBytes(code,langName,std){
                 resolve(this.response);
             }
             xhr.onerror = reject;
-            xhr.send(`input=${encodeURI(input)}&action=${action}&options=-O3%20std%3d${encodeURI(std)}`);
+            xhr.send(`input=${encodeURIComponent(input)}&action=${action}&options=-O3%20std%3d${encodeURI(std)}`);
         });
     }
     
