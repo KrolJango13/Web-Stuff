@@ -8,5 +8,3 @@ WebAssembly.instantiateStreaming(fetch("https://kroljango13.github.io/Web-Stuff/
             return [int >> 24, ((int >> 16) % 256), ((int >> 8) % 256), int % 256];
         };
     });
-}
-
