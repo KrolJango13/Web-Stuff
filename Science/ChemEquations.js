@@ -1,3 +1,4 @@
+/*
 function getElems(...molecules){
     var elems = [];
     for(var molec of molecules){
@@ -49,5 +50,14 @@ function getCoefsDecomp(reactant,c,d,maxCoef = 20){
     synth.unshift(synth.pop());
     return synth;
 }
+*/
 
-window.ChemBalancer = {getCoefs,getCoefsSynthesis,getCoefsDecomp};
+window.ChemBalancer = {};
+WebAssembly.instantiateStreaming(fetch("https://kroljango13.github.io/Web-Stuff/Science/ChemEquations.wasm")).then(x => x.instance.exports).then(wasmMod => {
+    
+    ChemBalancer.base = function(elements,maxCoef = 20){
+        var arr = new Int32Array(wasmMod.memory.buffer,0,elements.length);
+        arr.set(elements);
+        return wasmMod.base(elements.length,arr,maxCoef)
+    }
+})
