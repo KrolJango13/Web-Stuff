@@ -1,0 +1,2 @@
+As users of GoGuardian know, crosh is closed immediately upon opening the window or even looking it up on google. 
+I am making an attempt to bypass it by uploading the JS source files from the crosh page so you can use crosh as a JS API.
