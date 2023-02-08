@@ -4,16 +4,28 @@
         <title>Jango's HTML Website</title>
         <link rel="stylesheet" href="JangoStyle.css">
         <link rel="stylesheet" href="../DivSpacers/style.css">
+        <script src="./JangoAPI.js"></script>
         <script id="global" src="GlobalScript.js"></script>
         <script>
             function load(){
-                imports();
-                
+                function bitCalc(op, base, other){
+                    var a = parseInt(byID(base).value);
+                    var b = 0;
+                    if(byID(other))
+                        b = parseInt(byID(other).value);
+                    switch(op){
+                        case "NOT": return ~a;
+                        case "OR": return a | b;
+                        case "AND": return a && b;
+                        case "NOR": return ~(a | b);
+                        case "NAND": return ~(a && b);
+                        case "XOR": return a ^ b;
+                        case "XNOR": return ~(a ^ b);
+                        default: return "Operators: NOT, OR, AND, NOR, NAND, XOR, XNOR";
+                    }
+                }
                 byID("converter").addEventListener("click", function(e) {
-                    var other1 = byID("otherNum") || {value:1};
-                    var other = parseInt(other1.value);
-                    var op = byID("selector").value;
-                    byID("result").textContent = op in bitOps ? bitOps[op](parseInt(byID("base").value), other) : `Operators: ${Object.keys(bitOps).join(", ")}`;
+                    byID("result").textContent = bitCalc(byID("selector").value, "base", "other");
                 });
                 
                 byID("selector").addEventListener("input", function(e) {
@@ -42,6 +54,7 @@
         <div id=links>
             <a id="javadocsLink" href="./Javadocs/" target="_blank">Javadocs Map</a><br><br>
             <a id="bfLink" href="./BrainF%20Interpreter/" target="_blank">BrainF Interpreter</a><br><br>
+            <a id="convLink" href="./Converter/index.html" target="_blank">Unit Converter</a><br><br>
         </div>
         <div space="50"></div>
         <hr>

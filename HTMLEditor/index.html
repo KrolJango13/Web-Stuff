@@ -2,11 +2,31 @@
 <html>
     <head>
         <title>HTML Editor</title>
-        <script src="https://kroljango13.github.io/Web-Stuff/GlobalScript.js"></script>
     </head>
     <body>
-        <textarea id="code" spellcheck="false" style="width: 750px;height: 500px;border: 1px solid #000;"></textarea><br>
-        <button id="dl" style="background-color: #00f;color: #fff;width: 200px;height: 100px;">Download</button>
-        <script src="load.js"></script>
+        <textarea spellcheck="false" style="width: 750px;height: 500px;border: 1px solid #000;"></textarea><br>
+        <button style="background-color: #00f;color: #fff;width: 200px;height: 100px;">Download</button>
+        <script>
+            document.querySelector("textarea").onkeydown = function(e){
+                if(e.key === "Tab"){
+                    e.preventDefault();
+                    var cursor = this.selectionStart;
+                    var p1 = this.value.substr(0,cursor);
+                    var p2 = this.value.substr(cursor);
+                    this.value = p1 + "    " + p2;
+                    this.selectionStart = cursor + 4;
+                    this.selectionEnd = cursor + 4;
+                }
+            };
+
+            document.querySelector("button").onclick = function(e){
+                var url = URL.createObjectURL(new Blob([byID("code").value],{type: "text/html"}));
+                var a = document.createElement("a");
+                a.href = url;
+                a.download = prompt("Enter the file name:");
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+        </script>
     </body>
 </html>

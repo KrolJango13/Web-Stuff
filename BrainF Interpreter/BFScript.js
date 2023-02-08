@@ -68,7 +68,7 @@ function handleBF(str){
     var i = 0
     function update(){
         var entry = cellHistory.get(i)
-        Array.from(queryAll("th")).forEach((cr,j) => {
+        Array.from(document.querySelectorAll("th")).forEach((cr,j) => {
             cr.textContent = entry.cells[j]
             if(cr.classList.contains("currentcell"))cr.classList.remove("currentcell")
             if(j == entry.current)cr.classList.add("currentcell")
@@ -88,7 +88,7 @@ function init(){
     codePointer = 0
 }
 function updateDisplay(){
-    var cellRows = Array.from(queryAll("th"))
+    var cellRows = Array.from(document.querySelectorAll("th"))
     cellRows.forEach((cr,i) => {
         cr.textContent = cells[i]
         if(cr.classList.contains("currentcell"))cr.classList.remove("currentcell")

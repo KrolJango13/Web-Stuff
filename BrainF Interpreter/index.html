@@ -2,16 +2,15 @@
 <html>
     <head>
         <link rel="stylesheet" href="../JangoStyle.css">
-        <script src="../GlobalScript.js"></script>
         <script src ="BFScript.js"></script>
         <script>
             function load(){
-                query("button").addEventListener("click",e => {
+                document.querySelector("button").addEventListener("click",e => {
                     init()
                     updateDisplay()
                     handleBF(byID("code").value)
                 })
-                byID("mult").textContent = "[>[->+>+<<]>[-<+>]<<-]>[-]>>[-<<<+>>>]"
+                document.getElementById("mult").textContent = "[>[->+>+<<]>[-<+>]<<-]>[-]>>[-<<<+>>>]"
             }
         </script>
         <style>

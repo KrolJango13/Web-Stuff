@@ -2,32 +2,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="../JangoStyle.css">
-        <script src="../GlobalScript.js"></script>
-        <script>
-            function docLink(id,url){
-                applyLink(id,`https://docs.oracle.com/javase/8/docs/api/java/${url.replaceAll(".","/")}.html`);
-            }
-            function load(){
-                docLink("arrays","util.Arrays");
-                docLink("list","util.List");
-                docLink("map","util.Map");
-                docLink("collections","util.Collections");
-                docLink("scanner","util.Scanner");
-                docLink("char","lang.Character");
-                docLink("int","lang.Integer");
-                docLink("math","lang.Math");
-                docLink("str","lang.String");
-                docLink("strBuilder","lang.StringBuilder");
-                docLink("sys","lang.System");
-                docLink("array","lang.reflect.Array");
-                docLink("field","lang.reflect.Field");
-                docLink("method","lang.reflect.Method");
-                docLink("class","lang.Class");
-                docLink("runtime","lang.Runtime");
-            }
-        </script>
     </head>
-    <body onload="load()">
+    <body>
         <h1 id="title">Javadocs Map</h1>
         <h3><a href="https://www.jdoodle.com/online-java-compiler/" target="_blank">JDoodle Java Compiler</a></h3>
         <div id="util">
@@ -61,5 +37,27 @@
                 </div></li>
             </ul>
         </div>
+        <script>
+            function docLink(id,url){
+                document.getElementById(id).href = `https://docs.oracle.com/javase/8/docs/api/java/${url.replaceAll(".","/")}.html`;
+                document.getElementById(id).target = "_blank";
+            }
+            docLink("arrays","util.Arrays");
+            docLink("list","util.List");
+            docLink("map","util.Map");
+            docLink("collections","util.Collections");
+            docLink("scanner","util.Scanner");
+            docLink("char","lang.Character");
+            docLink("int","lang.Integer");
+            docLink("math","lang.Math");
+            docLink("str","lang.String");
+            docLink("strBuilder","lang.StringBuilder");
+            docLink("sys","lang.System");
+            docLink("array","lang.reflect.Array");
+            docLink("field","lang.reflect.Field");
+            docLink("method","lang.reflect.Method");
+            docLink("class","lang.Class");
+            docLink("runtime","lang.Runtime");
+        </script>
     </body>
 </html>
