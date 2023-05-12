@@ -88,5 +88,15 @@
             "char": "ż",
             "code": "17c"
         }
+    },
+    "dz": {
+        "upper": {
+            "char": "Ǳ",
+            "code": "1f1"
+        },
+        "lower": {
+            "char": "ʣ",
+            "code": "2a3"
+        }
     }
 }
