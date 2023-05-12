@@ -15,11 +15,11 @@
         </table>
         <script defer>
             function renderChars(){
-                if(!window.JangoChars){
+                if(!window.JangosChars){
                     setTimeout(renderChars, 250);
                     return;
                 }
-                for(var char of JangosChars){
+                for(var char of window.JangosChars){
                     document.querySelector("tbody").innerHTML += `<tr><td>${char[0]}</td><td>${char[1]}</td></tr>`
                 }
             }
